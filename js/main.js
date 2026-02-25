@@ -80,6 +80,32 @@
 })();
 
 (function () {
+    var cue = document.getElementById('hero-scroll-cue');
+    if (!cue) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    function onScroll() {
+        cue.classList.toggle('is-hidden', window.scrollY > 120);
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+})();
+
+/* Awwwards-inspired: Scroll Background – hero background reacts to scroll */
+(function () {
+    var hero = document.querySelector('.hero-lolikha');
+    var heroBg = hero ? hero.querySelector('.hero-bg') : null;
+    if (!hero || !heroBg) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    function onScroll() {
+        var rect = hero.getBoundingClientRect();
+        var past = rect.bottom < window.innerHeight * 0.5;
+        heroBg.classList.toggle('is-scrolled', past);
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+})();
+
+(function () {
     var hero = document.querySelector('.hero-lolikha');
     var headline = document.querySelector('.hero-headline');
     if (!hero || !headline) return;
