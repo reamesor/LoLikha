@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Archive | Lolikha — Your Mind, Unleashed.</title>
     <meta name="description" content="Portfolio of Lolikha work: Creative Force and Digital DNA. Film, events, web, and growth campaigns.">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@600;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,500&family=Inter:wght@300;400;500;600;700&display=swap">
     <link rel="stylesheet" href="../css/styles.css">
     <script type="application/ld+json">
     {"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://lolikha.com/#organization","name":"Lolikha","url":"https://lolikha.com/"},{"@type":"ItemList","name":"Lolikha Projects","description":"Portfolio of Creative Force and Digital DNA projects"}]}
@@ -16,20 +16,22 @@
     <div id="cursor-spotlight"></div>
 
     <header class="site-header">
-        <div class="container">
+        <div class="container header-inner">
             <a href="/" class="logo"><img src="../images/logo.png" alt="Lolikha — Your Mind, Unleashed."></a>
-            <button type="button" class="nav-toggle" aria-label="Open menu">Menu</button>
-            <nav>
-                <ul class="nav-main">
-                    <li><a href="/">Home</a></li>
-                    <li><a href="../services/index.html">Capabilities</a></li>
-                    <li><a href="index.html">The Archive</a></li>
-                    <li><a href="../about.html">The Legacy</a></li>
-                    <li><a href="../contact.html">Start the Evolution</a></li>
-                </ul>
-            </nav>
+            <button type="button" class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false">Menu</button>
         </div>
     </header>
+    <div class="nav-overlay" id="nav-overlay" aria-hidden="true">
+        <nav class="nav-overlay__inner">
+            <ul class="nav-overlay__list">
+                <li><a href="/">Home</a></li>
+                <li><a href="../services/index.html">Capabilities</a></li>
+                <li><a href="index.html">The Archive</a></li>
+                <li><a href="../about.html">The Legacy</a></li>
+                <li><a href="../contact.html">Start the Evolution</a></li>
+            </ul>
+        </nav>
+    </div>
 
     <main>
         <section class="page-hero" aria-labelledby="projects-heading">
@@ -40,12 +42,28 @@
             </div>
         </section>
 
-        <section class="projects-section" aria-labelledby="projects-grid-heading">
+        <section class="featured-project" aria-labelledby="featured-heading">
             <div class="container">
-                <h2 id="projects-grid-heading" class="visually-hidden">Project portfolio</h2>
-                <div class="projects-masonry stagger-children" data-awwwards-element="Project Gallery">
+                <p class="section-label">Featured</p>
+                <h2 id="featured-heading" class="section-title">Featured Project</h2>
+                <a href="#" class="featured-project__card" aria-label="View Brand Campaign — Cinematic">
+                    <div class="featured-project__img project-card__img--1"></div>
+                    <div class="featured-project__meta">
+                        <span class="featured-project__num">01</span>
+                        <span class="featured-project__cat">Film & Video</span>
+                        <h3 class="featured-project__title">Brand Campaign — Cinematic</h3>
+                        <p class="featured-project__desc">Creative direction, production, post. Where raw imagination meets cinematic execution.</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <section class="projects-section projects-section--horizontal" aria-labelledby="projects-grid-heading">
+            <h2 id="projects-grid-heading" class="visually-hidden">Project portfolio</h2>
+            <div class="projects-horizontal-scroll">
+                <div class="projects-horizontal-inner">
                     <article class="project-card project-card--wide reveal-up">
-                        <div class="project-card__img" aria-hidden="true"></div>
+                        <div class="project-card__img project-card__img--1" aria-hidden="true"></div>
                         <div class="project-card__inner">
                             <div class="project-card__num">01</div>
                             <div class="project-card__cat">Film & Video</div>
@@ -54,7 +72,7 @@
                         </div>
                     </article>
                     <article class="project-card reveal-up">
-                        <div class="project-card__img" aria-hidden="true"></div>
+                        <div class="project-card__img project-card__img--2" aria-hidden="true"></div>
                         <div class="project-card__inner">
                             <div class="project-card__num">02</div>
                             <div class="project-card__cat">Digital DNA</div>
@@ -63,7 +81,7 @@
                         </div>
                     </article>
                     <article class="project-card project-card--tall reveal-up">
-                        <div class="project-card__img" aria-hidden="true"></div>
+                        <div class="project-card__img project-card__img--3" aria-hidden="true"></div>
                         <div class="project-card__inner">
                             <div class="project-card__num">03</div>
                             <div class="project-card__cat">Events</div>
@@ -72,7 +90,7 @@
                         </div>
                     </article>
                     <article class="project-card reveal-up">
-                        <div class="project-card__img" aria-hidden="true"></div>
+                        <div class="project-card__img project-card__img--4" aria-hidden="true"></div>
                         <div class="project-card__inner">
                             <div class="project-card__num">04</div>
                             <div class="project-card__cat">Social & Growth</div>
@@ -81,7 +99,7 @@
                         </div>
                     </article>
                     <article class="project-card project-card--wide reveal-up">
-                        <div class="project-card__img" aria-hidden="true"></div>
+                        <div class="project-card__img project-card__img--5" aria-hidden="true"></div>
                         <div class="project-card__inner">
                             <div class="project-card__num">05</div>
                             <div class="project-card__cat">Creative Direction</div>
@@ -90,7 +108,7 @@
                         </div>
                     </article>
                     <article class="project-card reveal-up">
-                        <div class="project-card__img" aria-hidden="true"></div>
+                        <div class="project-card__img project-card__img--6" aria-hidden="true"></div>
                         <div class="project-card__inner">
                             <div class="project-card__num">06</div>
                             <div class="project-card__cat">Web</div>
@@ -102,6 +120,10 @@
             </div>
         </section>
     </main>
+
+    <div class="footer-cta-wrap">
+        <a href="../contact.html" class="footer-cta-btn">Start the Evolution</a>
+    </div>
 
     <footer class="site-footer">
         <div class="footer__inner container">

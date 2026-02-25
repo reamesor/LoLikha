@@ -35,6 +35,16 @@
             if (ring) ring.classList.remove('hover');
         });
     });
+    document.querySelectorAll('.project-card, .project-card a').forEach(function (el) {
+        el.addEventListener('mouseenter', function () {
+            if (dot) dot.classList.add('project-hover');
+            if (ring) ring.classList.add('project-hover');
+        });
+        el.addEventListener('mouseleave', function () {
+            if (dot) dot.classList.remove('project-hover');
+            if (ring) ring.classList.remove('project-hover');
+        });
+    });
     document.addEventListener('mousedown', function () {
         if (ring) ring.classList.add('click');
     });
@@ -175,10 +185,33 @@
 })();
 
 (function () {
-    var nav = document.querySelector('.nav-main');
-    var toggle = document.querySelector('.nav-toggle');
-    if (!nav || !toggle) return;
-    toggle.addEventListener('click', function () { nav.classList.toggle('is-open'); });
+    var overlay = document.getElementById('nav-overlay');
+    var toggle = document.getElementById('nav-toggle');
+    if (!overlay || !toggle) return;
+    function open() {
+        overlay.classList.add('is-open');
+        overlay.setAttribute('aria-hidden', 'false');
+        toggle.setAttribute('aria-expanded', 'true');
+        toggle.setAttribute('aria-label', 'Close menu');
+        document.body.style.overflow = 'hidden';
+    }
+    function close() {
+        overlay.classList.remove('is-open');
+        overlay.setAttribute('aria-hidden', 'true');
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.setAttribute('aria-label', 'Open menu');
+        document.body.style.overflow = '';
+    }
+    toggle.addEventListener('click', function () {
+        if (overlay.classList.contains('is-open')) close();
+        else open();
+    });
+    overlay.querySelectorAll('a').forEach(function (a) {
+        a.addEventListener('click', close);
+    });
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && overlay.classList.contains('is-open')) close();
+    });
 })();
 
 (function () {

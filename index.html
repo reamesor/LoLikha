@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lolikha | Your Mind, Unleashed.</title>
     <meta name="description" content="Your Mind, Unleashed. Lolikha bridges raw imagination and technical precision—cinematic experiences and digital engines that turn your vision into a global force.">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@600;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,500&family=Inter:wght@300;400;500;600;700&display=swap">
     <link rel="stylesheet" href="css/styles.css">
     <script type="application/ld+json">
     {
@@ -58,20 +58,22 @@
     <div id="cursor-spotlight"></div>
 
     <header class="site-header">
-        <div class="container">
+        <div class="container header-inner">
             <a href="/" class="logo"><img src="images/logo.png" alt="Lolikha — Your Mind, Unleashed."></a>
-            <button type="button" class="nav-toggle" aria-label="Open menu">Menu</button>
-            <nav>
-                <ul class="nav-main">
-                    <li><a href="/">Home</a></li>
-                    <li><a href="services/index.html">Capabilities</a></li>
-                    <li><a href="projects/index.html">The Archive</a></li>
-                    <li><a href="about.html">The Legacy</a></li>
-                    <li><a href="contact.html">Start the Evolution</a></li>
-                </ul>
-            </nav>
+            <button type="button" class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false">Menu</button>
         </div>
     </header>
+    <div class="nav-overlay" id="nav-overlay" aria-hidden="true">
+        <nav class="nav-overlay__inner">
+            <ul class="nav-overlay__list">
+                <li><a href="/">Home</a></li>
+                <li><a href="services/index.html">Capabilities</a></li>
+                <li><a href="projects/index.html">The Archive</a></li>
+                <li><a href="about.html">The Legacy</a></li>
+                <li><a href="contact.html">Start the Evolution</a></li>
+            </ul>
+        </nav>
+    </div>
 
     <main>
         <section class="hero-lolikha" aria-labelledby="hero-heading">
@@ -81,6 +83,7 @@
                 <div class="hero-bg__glow" id="hero-glow"></div>
                 <div class="hero-bg__grain"></div>
             </div>
+            <p class="hero-watermark" aria-hidden="true">LOLIKHA</p>
             <div class="container hero-lolikha__content">
                 <h1 id="hero-heading" class="hero__headline hero-headline" aria-label="Your Mind, Unleashed.">
                     <span class="hero-headline__line">
@@ -90,7 +93,7 @@
                         <span class="hero-headline__word hero-headline__word--accent">Unleashed.</span>
                     </span>
                 </h1>
-                <p class="hero__subheadline hero-subheadline">At Lolikha we bridge the gap between raw imagination and technical precision. We build the cinematic experiences and digital engines that turn your vision into a global force.</p>
+                <p class="hero__subheadline hero-subheadline hero-intro-style">[ LOLIKHA ] is a creative engine for [ VISIONARIES ] and [ BRAND LEADERS ]. We bridge raw imagination and technical precision—cinematic experiences and digital engines that turn your vision into a global force.</p>
                 <div class="cta-wrap hero-cta">
                     <a href="contact.html" class="btn-magnetic">Start the Evolution</a>
                 </div>
@@ -111,11 +114,14 @@
                 </div>
                 <div class="layout-two-col reveal-up">
                     <div class="flow-visual" aria-hidden="true">
-                        <span class="flow-visual__title">Lolikha — Creative Force &amp;<br>Digital DNA</span>
+                        <span class="flow-visual__label">[ PILLARS ]</span>
+                        <span class="flow-visual__line flow-visual__line--1">Creative Force</span>
+                        <span class="flow-visual__sep">/</span>
+                        <span class="flow-visual__line flow-visual__line--2">Digital DNA</span>
                     </div>
                     <div class="flow-accordion">
-                        <h3 class="flow-accordion__heading">Services</h3>
-                        <ul class="accordion-list" id="capabilities-accordion">
+                        <h3 class="flow-accordion__label" id="accordion-heading">[ SERVICES ]</h3>
+                        <ul class="accordion-list" id="capabilities-accordion" aria-labelledby="accordion-heading">
                             <li class="accordion-item">
                                 <button type="button" class="accordion-item__trigger" aria-expanded="false" aria-controls="cap-1" id="cap-1-btn">
                                     <span>Cinematic Storytelling</span>
@@ -189,7 +195,7 @@
                                 </div>
                             </li>
                         </ul>
-                        <p><a href="services/index.html" class="link-more">View all capabilities</a></p>
+                        <p class="flow-accordion__footer"><a href="services/index.html" class="link-more">View all capabilities →</a></p>
                     </div>
                 </div>
             </div>
@@ -283,6 +289,10 @@
             </div>
         </section>
     </main>
+
+    <div class="footer-cta-wrap">
+        <a href="contact.html" class="footer-cta-btn">Start the Evolution</a>
+    </div>
 
     <footer class="site-footer">
         <div class="footer__inner container">
