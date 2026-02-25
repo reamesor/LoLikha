@@ -18,12 +18,28 @@ python3 -m http.server 8787
 
 Open [http://localhost:8787](http://localhost:8787).
 
-## Deploy on Vercel
+## Deploy on GitHub + Vercel
 
-1. Push this repo to GitHub.
-2. In [Vercel](https://vercel.com), **Add New Project** → Import your GitHub repo.
-3. Leave **Build Command** and **Output Directory** as default (or set Root Directory to `.` and leave framework as Other).
-4. Deploy. Vercel will serve the static files from the repo root.
+### 1. Create a GitHub repo and push
+
+- On [GitHub](https://github.com/new), create a **new repository** (e.g. `oci-website`). Do **not** add a README or .gitignore (you already have them).
+- In this project folder, add the remote and push:
+
+```bash
+cd "/Users/sor/Documents/Cursor Apps/Lolikha"
+git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git
+git push -u origin main
+```
+
+(Replace `YOUR_USERNAME` and `YOUR_REPO_NAME` with your GitHub username and repo name.)
+
+### 2. Deploy on Vercel
+
+1. Go to [vercel.com](https://vercel.com) and sign in (GitHub is easiest).
+2. Click **Add New…** → **Project**.
+3. **Import** your GitHub repository (e.g. `oci-website`).
+4. Leave settings as-is: **Framework Preset:** Other, **Root Directory:** default, **Build Command** and **Output Directory** empty.
+5. Click **Deploy**. Your site will be live at `https://your-project.vercel.app`.
 
 ## Structure
 
