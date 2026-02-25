@@ -690,46 +690,72 @@ body {
 .service-card .link:hover::after { transform: scaleX(1); transform-origin: left; }
 .service-card .link:hover { color: var(--logo-teal); }
 
-/* Process: asymmetric layout + vertical timeline */
+/* Process: centered layout, larger type, motion */
 .process-section { padding: var(--section-padding) 0; border-bottom: 1px solid var(--border); }
 .process-section .container { max-width: var(--container-max); }
-.process-section .section-intro { max-width: 42em; font-weight: 400; color: var(--text-muted); margin-bottom: 1.5rem; }
-.vertical-milestone { padding: 1.25rem 0 clamp(40px, 5vw, 64px); position: relative; }
-.vertical-milestone .container { position: relative; max-width: var(--container-max); }
+.process-section__header { text-align: center; margin-bottom: 0.5rem; }
+.process-section .section-label { margin-bottom: 0.5rem; }
+.process-section__title {
+    font-size: clamp(2.25rem, 5vw, 3.5rem);
+    margin-bottom: 1rem;
+}
+.process-section__intro {
+    max-width: 36em;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: clamp(1.05rem, 2vw, 1.25rem);
+    line-height: 1.6;
+    font-weight: 400;
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+}
+
+.vertical-milestone { padding: 2rem 0 clamp(56px, 8vw, 100px); position: relative; }
+.vertical-milestone .container { position: relative; max-width: 720px; margin: 0 auto; }
 .vertical-milestone__track {
     position: absolute;
-    left: 1.25rem;
+    left: 50%;
     top: 0;
     bottom: 0;
-    width: 1px;
+    width: 2px;
+    margin-left: -1px;
     background: var(--border);
-    border-radius: 1px;
+    border-radius: 2px;
 }
 .vertical-milestone__progress {
     position: absolute;
-    left: 1.25rem;
+    left: 50%;
     top: 0;
-    width: 1px;
+    width: 2px;
+    margin-left: -1px;
     height: 0;
-    background: var(--accent);
-    border-radius: 1px;
-    transform: translateX(-50%);
-    transition: height 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    background: linear-gradient(180deg, var(--logo-teal), var(--logo-teal-light));
+    border-radius: 2px;
+    transition: height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
-.vertical-milestone__list { list-style: none; padding-left: 0; }
+.vertical-milestone__list { list-style: none; padding-left: 0; margin: 0; }
 .vertical-milestone__item {
     position: relative;
-    padding: 1.75rem 0 1.75rem 2.75rem;
-    min-height: 100px;
+    padding: 2.5rem 1.5rem 2.5rem;
+    min-height: 120px;
+    text-align: center;
+    transition: transform 0.35s var(--ease-out-expo), opacity 0.35s ease;
+}
+.vertical-milestone__item:hover {
+    transform: scale(1.02);
 }
 .vertical-milestone__item:first-child { padding-top: 0; }
+.vertical-milestone__item.reveal-up { transition-delay: 0s; }
+.vertical-milestone__item.reveal-up:nth-child(2) { transition-delay: 0.1s; }
+.vertical-milestone__item.reveal-up:nth-child(3) { transition-delay: 0.2s; }
 .vertical-milestone__number {
     position: absolute;
-    left: 0;
-    top: 1.75rem;
+    left: 50%;
+    top: 2rem;
+    transform: translateX(-50%);
     font-family: 'Montserrat', 'Inter', sans-serif;
     font-weight: 700;
-    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-size: clamp(3rem, 8vw, 5rem);
     line-height: 1;
     letter-spacing: -0.04em;
     color: var(--text);
@@ -739,30 +765,74 @@ body {
 .vertical-milestone__item:first-child .vertical-milestone__number { top: 0; }
 .vertical-milestone__item.is-active .vertical-milestone__number {
     opacity: 1;
-    color: var(--accent);
-    transform: scale(1.02);
+    color: var(--logo-teal);
+    transform: translateX(-50%) scale(1.05);
+    animation: process-number-pulse 2s ease-in-out infinite;
 }
-.vertical-milestone__item.is-passed .vertical-milestone__number { opacity: 0.5; color: var(--accent); }
+.vertical-milestone__item.is-passed .vertical-milestone__number {
+    opacity: 0.5;
+    color: var(--logo-teal);
+    transform: translateX(-50%);
+}
+@keyframes process-number-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.85; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .vertical-milestone__item.is-active .vertical-milestone__number { animation: none; }
+}
 .vertical-milestone__dot {
     position: absolute;
-    left: 2rem;
-    top: 3rem;
-    width: 11px;
-    height: 11px;
+    left: 50%;
+    top: 3.5rem;
+    width: 14px;
+    height: 14px;
+    margin-left: -7px;
     border-radius: 50%;
     background: var(--border);
-    transform: translate(-50%, -50%);
-    transition: background 0.35s ease, box-shadow 0.35s ease;
+    transition: background 0.35s ease, box-shadow 0.35s ease, transform 0.35s ease;
     z-index: 1;
 }
-.vertical-milestone__item:first-child .vertical-milestone__dot { top: 0.5rem; }
+.vertical-milestone__item:first-child .vertical-milestone__dot { top: 0.75rem; }
 .vertical-milestone__item.is-active .vertical-milestone__dot {
-    background: var(--accent);
-    box-shadow: 0 0 0 4px rgba(167, 139, 250, 0.2);
+    background: var(--logo-teal);
+    box-shadow: 0 0 0 4px rgba(13, 148, 136, 0.25), 0 0 20px rgba(13, 148, 136, 0.3);
+    transform: translateX(-50%) scale(1.15);
 }
-.vertical-milestone__item.is-passed .vertical-milestone__dot { background: var(--accent); }
-.vertical-milestone__content h3 { font-family: 'Montserrat', 'Inter', sans-serif; font-weight: 700; font-size: 1.2rem; margin-bottom: 0.5rem; }
-.vertical-milestone__content p { font-weight: 300; color: var(--text-muted); max-width: 36em; font-size: 0.95rem; }
+.vertical-milestone__item.is-passed .vertical-milestone__dot {
+    background: var(--logo-teal);
+    transform: translateX(-50%);
+}
+.vertical-milestone__item:hover .vertical-milestone__dot {
+    transform: translateX(-50%) scale(1.1);
+    box-shadow: 0 0 0 6px rgba(13, 148, 136, 0.15);
+}
+.vertical-milestone__content {
+    margin-top: 3rem;
+    padding-top: 0.5rem;
+    padding: 1rem 1.25rem;
+    border-radius: 12px;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+.vertical-milestone__item:hover .vertical-milestone__content {
+    background: rgba(13, 148, 136, 0.04);
+    box-shadow: 0 0 0 1px rgba(13, 148, 136, 0.1);
+}
+.vertical-milestone__content h3 {
+    font-family: 'Montserrat', 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.25rem, 2.5vw, 1.6rem);
+    margin-bottom: 0.75rem;
+    color: var(--text);
+}
+.vertical-milestone__content p {
+    font-weight: 300;
+    color: var(--text-muted);
+    max-width: 28em;
+    margin: 0 auto;
+    font-size: clamp(1rem, 1.5vw, 1.1rem);
+    line-height: 1.65;
+}
 
 /* Why Creative Growth */
 .why-section { padding: var(--section-padding) 0; border-bottom: 1px solid var(--border); }
