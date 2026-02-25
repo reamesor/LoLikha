@@ -208,3 +208,22 @@
         btn.addEventListener('mouseleave', function () { btn.style.transform = ''; });
     });
 })();
+
+(function () {
+    var list = document.getElementById('capabilities-accordion');
+    if (!list) return;
+    var items = list.querySelectorAll('.accordion-item');
+    var triggers = list.querySelectorAll('.accordion-item__trigger');
+    triggers.forEach(function (btn, i) {
+        btn.addEventListener('click', function () {
+            var item = items[i];
+            var isOpen = item.classList.contains('is-open');
+            items.forEach(function (it) { it.classList.remove('is-open'); });
+            triggers.forEach(function (t) { t.setAttribute('aria-expanded', 'false'); });
+            if (!isOpen) {
+                item.classList.add('is-open');
+                btn.setAttribute('aria-expanded', 'true');
+            }
+        });
+    });
+})();

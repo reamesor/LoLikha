@@ -102,54 +102,93 @@
             <p class="tagline-transition__headline">Your Mind, Unleashed.</p>
         </section>
 
-        <section class="services-section" aria-labelledby="services-heading">
+        <section class="services-flow" aria-labelledby="services-heading">
             <div class="container">
-                <p class="section-label">What We Release</p>
-                <h2 id="services-heading" class="section-title">Capabilities</h2>
-                <p class="services-intro reveal-up">Two pillars: <strong>High-Fidelity Production</strong> (film, events, creative direction) and <strong>Digital Engineering</strong> (web, SEO, social). Art and technology driving exponential growth.</p>
-                <div class="services-pillars">
-                    <div class="services-pillar">
-                        <h3 class="pillar-title">High-Fidelity Production</h3>
-                        <div class="services-grid stagger-children">
-                            <article class="service-card">
-                                <h4>Cinematic Storytelling</h4>
-                                <p>Professional film and video production for brands and commercials. World-class visual storytelling that converts.</p>
-                                <a href="services/cinematic-storytelling.html" class="link">Learn More</a>
-                            </article>
-                            <article class="service-card">
-                                <h4>Event Curation</h4>
-                                <p>Immersive brand events that blend physical and digital impact. Precision-led experiences that scale.</p>
-                                <a href="services/event-curation.html" class="link">Learn More</a>
-                            </article>
-                            <article class="service-card">
-                                <h4>Creative Direction</h4>
-                                <p>End-to-end visual conceptualization. From concept to execution—one creative vision, unmatched commitment.</p>
-                                <a href="services/creative-direction.html" class="link">Learn More</a>
-                            </article>
-                        </div>
+                <p class="section-label flow-section-label">What We Release</p>
+                <h2 id="services-heading" class="section-title flow-section-title">Capabilities</h2>
+                <div class="layout-two-col">
+                    <div class="flow-visual" aria-hidden="true">
+                        <span class="flow-visual__title">High-Fidelity Production &amp;<br>Digital Engineering</span>
                     </div>
-                    <div class="services-pillar">
-                        <h3 class="pillar-title">Digital Engineering</h3>
-                        <div class="services-grid stagger-children">
-                            <article class="service-card">
-                                <h4>Creative Web Architecture</h4>
-                                <p>Bespoke, high-performance websites built for conversion. UX and technical precision in one.</p>
-                                <a href="services/creative-web-design.html" class="link">Learn More</a>
-                            </article>
-                            <article class="service-card">
-                                <h4>AI Schema & SEO Integration</h4>
-                                <p>Technical engineering that ensures search engine dominance. AI-driven schema and SEO-first architecture.</p>
-                                <a href="services/ai-seo-integration.html" class="link">Learn More</a>
-                            </article>
-                            <article class="service-card">
-                                <h4>Social Media Advertising</h4>
-                                <p>Data-driven campaigns scaling businesses through creative assets. Growth and creativity in lockstep.</p>
-                                <a href="services/social-media-advertising.html" class="link">Learn More</a>
-                            </article>
-                        </div>
+                    <div class="flow-accordion">
+                        <h3 class="flow-accordion__heading">Services</h3>
+                        <ul class="accordion-list" id="capabilities-accordion">
+                            <li class="accordion-item">
+                                <button type="button" class="accordion-item__trigger" aria-expanded="false" aria-controls="cap-1" id="cap-1-btn">
+                                    <span>Cinematic Storytelling</span>
+                                    <span class="icon-plus" aria-hidden="true"></span>
+                                </button>
+                                <div class="accordion-item__panel" id="cap-1" role="region" aria-labelledby="cap-1-btn">
+                                    <div class="accordion-item__inner">
+                                        <p>Professional film and video production for brands and commercials. World-class visual storytelling that converts.</p>
+                                        <a href="services/cinematic-storytelling.html" class="link-more">Learn more</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="accordion-item">
+                                <button type="button" class="accordion-item__trigger" aria-expanded="false" aria-controls="cap-2" id="cap-2-btn">
+                                    <span>Event Curation</span>
+                                    <span class="icon-plus" aria-hidden="true"></span>
+                                </button>
+                                <div class="accordion-item__panel" id="cap-2" role="region" aria-labelledby="cap-2-btn">
+                                    <div class="accordion-item__inner">
+                                        <p>Immersive brand events that blend physical and digital impact. Precision-led experiences that scale.</p>
+                                        <a href="services/event-curation.html" class="link-more">Learn more</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="accordion-item">
+                                <button type="button" class="accordion-item__trigger" aria-expanded="false" aria-controls="cap-3" id="cap-3-btn">
+                                    <span>Creative Direction</span>
+                                    <span class="icon-plus" aria-hidden="true"></span>
+                                </button>
+                                <div class="accordion-item__panel" id="cap-3" role="region" aria-labelledby="cap-3-btn">
+                                    <div class="accordion-item__inner">
+                                        <p>End-to-end visual conceptualization. From concept to execution—one creative vision, unmatched commitment.</p>
+                                        <a href="services/creative-direction.html" class="link-more">Learn more</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="accordion-item">
+                                <button type="button" class="accordion-item__trigger" aria-expanded="false" aria-controls="cap-4" id="cap-4-btn">
+                                    <span>Creative Web Architecture</span>
+                                    <span class="icon-plus" aria-hidden="true"></span>
+                                </button>
+                                <div class="accordion-item__panel" id="cap-4" role="region" aria-labelledby="cap-4-btn">
+                                    <div class="accordion-item__inner">
+                                        <p>Bespoke, high-performance websites built for conversion. UX and technical precision in one.</p>
+                                        <a href="services/creative-web-design.html" class="link-more">Learn more</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="accordion-item">
+                                <button type="button" class="accordion-item__trigger" aria-expanded="false" aria-controls="cap-5" id="cap-5-btn">
+                                    <span>AI Schema &amp; SEO Integration</span>
+                                    <span class="icon-plus" aria-hidden="true"></span>
+                                </button>
+                                <div class="accordion-item__panel" id="cap-5" role="region" aria-labelledby="cap-5-btn">
+                                    <div class="accordion-item__inner">
+                                        <p>Technical engineering that ensures search engine dominance. AI-driven schema and SEO-first architecture.</p>
+                                        <a href="services/ai-seo-integration.html" class="link-more">Learn more</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="accordion-item">
+                                <button type="button" class="accordion-item__trigger" aria-expanded="false" aria-controls="cap-6" id="cap-6-btn">
+                                    <span>Social Media Advertising</span>
+                                    <span class="icon-plus" aria-hidden="true"></span>
+                                </button>
+                                <div class="accordion-item__panel" id="cap-6" role="region" aria-labelledby="cap-6-btn">
+                                    <div class="accordion-item__inner">
+                                        <p>Data-driven campaigns scaling businesses through creative assets. Growth and creativity in lockstep.</p>
+                                        <a href="services/social-media-advertising.html" class="link-more">Learn more</a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                        <p style="margin-top: var(--space-6);"><a href="services/index.html" class="link-more">View all capabilities</a></p>
                     </div>
                 </div>
-                <p class="animate-in" style="margin-top: 2rem;"><a href="services/index.html" class="btn">View All Capabilities</a></p>
             </div>
         </section>
 
@@ -165,24 +204,30 @@
                     <div class="vertical-milestone__progress" id="milestone-progress"></div>
                     <ol class="vertical-milestone__list" id="milestone-list">
                         <li class="vertical-milestone__item reveal-up">
-                            <span class="vertical-milestone__number" aria-hidden="true">01</span>
-                            <span class="vertical-milestone__dot"></span>
+                            <div class="vertical-milestone__number-row">
+                                <span class="vertical-milestone__number" aria-hidden="true">01</span>
+                                <span class="vertical-milestone__dot"></span>
+                            </div>
                             <div class="vertical-milestone__content">
                                 <h3>Discovery</h3>
                                 <p>Uncovering market gaps and identifying your unique Creative Edge. Strategy before execution.</p>
                             </div>
                         </li>
                         <li class="vertical-milestone__item reveal-up">
-                            <span class="vertical-milestone__number" aria-hidden="true">02</span>
-                            <span class="vertical-milestone__dot"></span>
+                            <div class="vertical-milestone__number-row">
+                                <span class="vertical-milestone__number" aria-hidden="true">02</span>
+                                <span class="vertical-milestone__dot"></span>
+                            </div>
                             <div class="vertical-milestone__content">
                                 <h3>Engineering</h3>
                                 <p>Deploying SEO-first code, AI-driven schema, and high-fidelity creative execution.</p>
                             </div>
                         </li>
                         <li class="vertical-milestone__item reveal-up">
-                            <span class="vertical-milestone__number" aria-hidden="true">03</span>
-                            <span class="vertical-milestone__dot"></span>
+                            <div class="vertical-milestone__number-row">
+                                <span class="vertical-milestone__number" aria-hidden="true">03</span>
+                                <span class="vertical-milestone__dot"></span>
+                            </div>
                             <div class="vertical-milestone__content">
                                 <h3>Scaling</h3>
                                 <p>Continuous optimization and growth tracking. Precision-led scaling that sustains results.</p>
