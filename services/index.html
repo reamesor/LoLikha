@@ -3,9 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services | Outsource Consultants, Inc.</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@800&family=JetBrains+Mono:wght@400;500&family=Inter:wght@300;400;500&display=swap">
+    <title>Services | Lolikha — Creative Solutions. Exponential Growth.</title>
+    <meta name="description" content="Creative Web Design, AI & SEO Integration, Social Media Advertising, and Brand Marketing. The Lolikha Edge.">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@600;700&display=swap">
     <link rel="stylesheet" href="../css/styles.css">
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://lolikha.com/#organization","name":"Lolikha","url":"https://lolikha.com/","slogan":"Creative Solutions. Exponential Growth."},{"@type":"WebSite","@id":"https://lolikha.com/#website","url":"https://lolikha.com/","name":"Lolikha","publisher":{"@id":"https://lolikha.com/#organization"}},{"@type":"ProfessionalService","name":"Lolikha","description":"Creative web design, AI & SEO integration, social media advertising, brand marketing.","provider":{"@id":"https://lolikha.com/#organization"},"serviceType":["Creative Web Design","SEO & AI Schema Integration","Social Media Advertising","Brand Marketing"]}]}
+    </script>
 </head>
 <body>
     <div id="cursor-dot"></div>
@@ -13,16 +17,14 @@
 
     <header class="site-header">
         <div class="container">
-            <a href="/" class="logo">Outsource <span>Consultants, Inc.</span></a>
-            <button type="button" class="nav-toggle" aria-label="Menu">Menu</button>
+            <a href="/" class="logo">Lolikha</a>
+            <button type="button" class="nav-toggle" aria-label="Open menu">Menu</button>
             <nav>
                 <ul class="nav-main">
-                    <li><a href="../about.html">About</a></li>
+                    <li><a href="/">Home</a></li>
                     <li><a href="index.html">Services</a></li>
                     <li><a href="../projects/index.html">Projects</a></li>
-                    <li><a href="../clients.html">Clients</a></li>
-                    <li><a href="../culture-careers.html">Culture & Careers</a></li>
-                    <li><a href="../blog/index.html">Blog</a></li>
+                    <li><a href="../about.html">About</a></li>
                     <li><a href="../contact.html">Contact</a></li>
                 </ul>
             </nav>
@@ -30,47 +32,37 @@
     </header>
 
     <main>
-        <section class="page-hero">
+        <section class="page-hero" aria-labelledby="services-heading">
             <div class="container">
-                <p class="section-label">Intro</p>
-                <h1>Our Services</h1>
-                <p>As you tackle the construction process, Outsource Consultants is there for you every step of the way, handling projects in code consultation, construction services, compliance and more. Covering everything in expediting from DOB NOW and violation dismissals to Certificates of Occupancy and DOT permits, we're the firm for you.</p>
-                <p style="margin-top: 1rem;">Navigating city regulatory agencies can seem like an insurmountable task for architects, engineers, owners and contractors. From concept to construction, Outsource guides every step—turning blueprints into shovel-ready projects.</p>
+                <p class="section-label animate-in">The Lolikha Edge</p>
+                <h1 id="services-heading" class="animate-in">Our Services</h1>
+                <p class="animate-in">We bridge the gap between creative storytelling and technical performance. From bespoke web design to AI-driven SEO and scalable social campaigns, we build growth engines—not just sites.</p>
             </div>
         </section>
 
-        <section class="services-section">
+        <section class="services-section" aria-labelledby="services-grid-heading">
             <div class="container">
+                <h2 id="services-grid-heading" class="visually-hidden">Service offerings</h2>
                 <div class="services-grid">
-                    <article class="service-card">
-                        <span class="section-label">1</span>
-                        <h3>Code & Zoning Consultation</h3>
-                        <p>At Outsource Consultants, our in-house team of expert consultants tackles the most complex Building, Zoning, Plumbing, and Mechanical Code challenges in New York City.</p>
-                        <a href="building-code-needs.html" class="link">Read More</a>
+                    <article class="service-card animate-in">
+                        <h3>Creative Web Design</h3>
+                        <p>Websites shouldn't just look good; they should work. We focus on UX/UI that guides users toward conversion.</p>
+                        <a href="creative-web-design.html" class="link">Read More</a>
                     </article>
-                    <article class="service-card">
-                        <span class="section-label">2</span>
-                        <h3>Construction Expediting</h3>
-                        <p>We accelerate approvals, keep agencies moving, and eliminate delays from start to finish.</p>
-                        <a href="construction-expediting.html" class="link">Read More</a>
+                    <article class="service-card animate-in">
+                        <h3>SEO & AI Schema Integration</h3>
+                        <p>We inject advanced AI schema markups into your site's DNA so search engines understand and rank you higher, faster.</p>
+                        <a href="ai-seo-integration.html" class="link">Read More</a>
                     </article>
-                    <article class="service-card">
-                        <span class="section-label">3</span>
-                        <h3>Job Approvals</h3>
-                        <p>We help New York City projects move faster by efficiently navigating approvals and permits through city agencies.</p>
-                        <a href="job-approvals.html" class="link">Read More</a>
+                    <article class="service-card animate-in">
+                        <h3>Social Media Advertising</h3>
+                        <p>Data-driven campaigns that capture attention and scale brand presence creatively.</p>
+                        <a href="social-media-advertising.html" class="link">Read More</a>
                     </article>
-                    <article class="service-card">
-                        <span class="section-label">4</span>
-                        <h3>Sign-Offs & Project Closeouts</h3>
-                        <p>Lingering open applications can stall your construction project and complicate refinancing. At Outsource Consultants, we prioritize project completion, preparing for closeout even before the DOB issues the permits.</p>
-                        <a href="sign-offs.html" class="link">Read More</a>
-                    </article>
-                    <article class="service-card">
-                        <span class="section-label">5</span>
-                        <h3>Violation Resolution & Building Compliance</h3>
-                        <p>Fast, effective resolution of violations and proactive compliance to keep your project on track.</p>
-                        <a href="resolve-violations.html" class="link">Read More</a>
+                    <article class="service-card animate-in">
+                        <h3>Brand Marketing</h3>
+                        <p>Strategy and execution that align your brand story with measurable growth and audience engagement.</p>
+                        <a href="brand-marketing.html" class="link">Read More</a>
                     </article>
                 </div>
             </div>
@@ -80,22 +72,26 @@
     <footer class="site-footer">
         <div class="container">
             <ul class="footer-nav">
-                <li><a href="../about.html">About</a></li>
+                <li><a href="/">Home</a></li>
                 <li><a href="index.html">Services</a></li>
                 <li><a href="../projects/index.html">Projects</a></li>
-                <li><a href="../clients.html">Clients</a></li>
-                <li><a href="../culture-careers.html">Culture & Careers</a></li>
-                <li><a href="../blog/index.html">Blog</a></li>
+                <li><a href="../about.html">About</a></li>
                 <li><a href="../contact.html">Contact</a></li>
             </ul>
+            <div class="footer-insights">
+                <h3>Latest Insights</h3>
+                <ul>
+                    <li><a href="../blog/index.html">How AI is changing digital marketing</a></li>
+                    <li><a href="../blog/index.html">SEO-first design</a></li>
+                    <li><a href="../blog/index.html">From clicks to customers</a></li>
+                </ul>
+            </div>
             <div class="footer-contact">
-                <p><a href="tel:+12127320555">1-212-732-0555</a></p>
-                <p>237 West 35th Street, Suite 12A<br>New York, New York 10001</p>
-                <p><a href="mailto:contact@outsourceconsultants.com">contact@outsourceconsultants.com</a></p>
+                <p><a href="../contact.html">Contact us</a> for a Growth Calculator or Strategy Audit.</p>
             </div>
         </div>
         <div class="container footer-bottom">
-            <p>© 2026 Outsource Consultants, Inc. All Rights Reserved.</p>
+            <p>Lolikha — Creative Solutions. Exponential Growth. &copy; 2026</p>
         </div>
     </footer>
 

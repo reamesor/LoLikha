@@ -3,9 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog | Outsource Consultants, Inc.</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@800&family=JetBrains+Mono:wght@400;500&family=Inter:wght@300;400;500&display=swap">
+    <title>Latest Insights | Lolikha — Creative Solutions. Exponential Growth.</title>
+    <meta name="description" content="Insights on how AI is changing digital marketing, SEO-first design, and turning clicks into customers.">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@600;700&display=swap">
     <link rel="stylesheet" href="../css/styles.css">
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://lolikha.com/#organization","name":"Lolikha","url":"https://lolikha.com/","slogan":"Creative Solutions. Exponential Growth."},{"@type":"WebSite","@id":"https://lolikha.com/#website","url":"https://lolikha.com/","name":"Lolikha","publisher":{"@id":"https://lolikha.com/#organization"}},{"@type":"Blog","name":"Latest Insights","description":"How AI is changing digital marketing and growth strategies. Lolikha thought leadership."}]}
+    </script>
 </head>
 <body>
     <div id="cursor-dot"></div>
@@ -13,16 +17,14 @@
 
     <header class="site-header">
         <div class="container">
-            <a href="/" class="logo">Outsource <span>Consultants, Inc.</span></a>
-            <button type="button" class="nav-toggle" aria-label="Menu">Menu</button>
+            <a href="/" class="logo">Lolikha</a>
+            <button type="button" class="nav-toggle" aria-label="Open menu">Menu</button>
             <nav>
                 <ul class="nav-main">
-                    <li><a href="../about.html">About</a></li>
+                    <li><a href="/">Home</a></li>
                     <li><a href="../services/index.html">Services</a></li>
                     <li><a href="../projects/index.html">Projects</a></li>
-                    <li><a href="../clients.html">Clients</a></li>
-                    <li><a href="../culture-careers.html">Culture & Careers</a></li>
-                    <li><a href="index.html">Blog</a></li>
+                    <li><a href="../about.html">About</a></li>
                     <li><a href="../contact.html">Contact</a></li>
                 </ul>
             </nav>
@@ -30,20 +32,21 @@
     </header>
 
     <main>
-        <section class="page-hero">
+        <section class="page-hero" aria-labelledby="blog-heading">
             <div class="container">
-                <h1>Latest News</h1>
-                <p>Updates on building codes, zoning, permits, and industry news from Outsource Consultants.</p>
+                <h1 id="blog-heading" class="animate-in">Latest Insights</h1>
+                <p class="animate-in">How AI is changing digital marketing—and how we help brands stay ahead.</p>
             </div>
         </section>
 
-        <section class="news-section">
+        <section class="news-section" aria-labelledby="insights-list-heading">
             <div class="container">
+                <h2 id="insights-list-heading" class="visually-hidden">Blog and insight articles</h2>
                 <ul class="news-list">
-                    <li><span class="date">02.12</span><span class="cat">Contractors</span><a href="#">Building Inclusivity: Celebrating Black History in Construction, Architecture, & Engineering</a></li>
-                    <li><span class="date">02.07</span><span class="cat">Architects</span><a href="#">Outsource Consultants Inc becomes SCA Certified MBE</a></li>
-                    <li><span class="date">02.07</span><span class="cat">Building Owners</span><a href="#">Leaving Lead Behind: How NYC Plans to Replace Lead Pipes</a></li>
-                    <li><span class="date">02.07</span><span class="cat">Building Owners</span><a href="#">Powering Up: Applications Open for E-Bike Charging Cabinets</a></li>
+                    <li><span class="date">02.25</span><span class="cat">AI & SEO</span><a href="#">How AI is changing digital marketing in 2025</a></li>
+                    <li><span class="date">02.20</span><span class="cat">Design</span><a href="#">SEO-first design: why structure beats style</a></li>
+                    <li><span class="date">02.15</span><span class="cat">Conversion</span><a href="#">From clicks to customers: building conversion into UX</a></li>
+                    <li><span class="date">02.10</span><span class="cat">Schema</span><a href="#">JSON-LD and Rich Snippets: what we inject and why</a></li>
                 </ul>
             </div>
         </section>
@@ -52,22 +55,26 @@
     <footer class="site-footer">
         <div class="container">
             <ul class="footer-nav">
-                <li><a href="../about.html">About</a></li>
+                <li><a href="/">Home</a></li>
                 <li><a href="../services/index.html">Services</a></li>
                 <li><a href="../projects/index.html">Projects</a></li>
-                <li><a href="../clients.html">Clients</a></li>
-                <li><a href="../culture-careers.html">Culture & Careers</a></li>
-                <li><a href="index.html">Blog</a></li>
+                <li><a href="../about.html">About</a></li>
                 <li><a href="../contact.html">Contact</a></li>
             </ul>
+            <div class="footer-insights">
+                <h3>Latest Insights</h3>
+                <ul>
+                    <li><a href="index.html">How AI is changing digital marketing</a></li>
+                    <li><a href="index.html">SEO-first design</a></li>
+                    <li><a href="index.html">From clicks to customers</a></li>
+                </ul>
+            </div>
             <div class="footer-contact">
-                <p><a href="tel:+12127320555">1-212-732-0555</a></p>
-                <p>237 West 35th Street, Suite 12A<br>New York, New York 10001</p>
-                <p><a href="mailto:contact@outsourceconsultants.com">contact@outsourceconsultants.com</a></p>
+                <p><a href="../contact.html">Contact us</a> for a Growth Calculator or Strategy Audit.</p>
             </div>
         </div>
         <div class="container footer-bottom">
-            <p>© 2026 Outsource Consultants, Inc. All Rights Reserved.</p>
+            <p>Lolikha — Creative Solutions. Exponential Growth. &copy; 2026</p>
         </div>
     </footer>
 

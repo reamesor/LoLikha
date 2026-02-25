@@ -3,9 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Outsource Consultants | Experts in Municipal Building Codes, Zoning & Permits</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@800&family=JetBrains+Mono:wght@400;500&family=Inter:wght@300;400;500&display=swap">
+    <title>Lolikha | Creative Solutions. Exponential Growth.</title>
+    <meta name="description" content="We bridge the gap between creative storytelling and technical performance. AI-driven schema, SEO-first architecture, and bespoke web design that builds growth engines.">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@600;700&display=swap">
     <link rel="stylesheet" href="css/styles.css">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Organization",
+                "@id": "https://lolikha.com/#organization",
+                "name": "Lolikha",
+                "url": "https://lolikha.com/",
+                "description": "Creative Solutions. Exponential Growth. We bridge the gap between creative storytelling and technical performance through AI-driven schema, SEO-first architecture, and bespoke web design.",
+                "slogan": "Creative Solutions. Exponential Growth."
+            },
+            {
+                "@type": "WebSite",
+                "@id": "https://lolikha.com/#website",
+                "url": "https://lolikha.com/",
+                "name": "Lolikha",
+                "publisher": { "@id": "https://lolikha.com/#organization" }
+            },
+            {
+                "@type": "ProfessionalService",
+                "@id": "https://lolikha.com/#service",
+                "name": "Lolikha",
+                "description": "Creative web design, AI & SEO integration, social media advertising, and brand marketing. We build high-performance websites and growth engines.",
+                "provider": { "@id": "https://lolikha.com/#organization" },
+                "serviceType": ["Creative Web Design", "SEO & AI Schema Integration", "Social Media Advertising", "Brand Marketing"]
+            }
+        ]
+    }
+    </script>
 </head>
 <body>
     <div id="cursor-dot"></div>
@@ -13,16 +44,14 @@
 
     <header class="site-header">
         <div class="container">
-            <a href="/" class="logo">Outsource <span>Consultants, Inc.</span></a>
-            <button type="button" class="nav-toggle" aria-label="Menu">Menu</button>
+            <a href="/" class="logo">Lolikha</a>
+            <button type="button" class="nav-toggle" aria-label="Open menu">Menu</button>
             <nav>
                 <ul class="nav-main">
-                    <li><a href="about.html">About</a></li>
+                    <li><a href="/">Home</a></li>
                     <li><a href="services/index.html">Services</a></li>
                     <li><a href="projects/index.html">Projects</a></li>
-                    <li><a href="clients.html">Clients</a></li>
-                    <li><a href="culture-careers.html">Culture & Careers</a></li>
-                    <li><a href="blog/index.html">Blog</a></li>
+                    <li><a href="about.html">About</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
@@ -30,75 +59,51 @@
     </header>
 
     <main>
-        <section class="hero">
+        <section class="hero-lolikha" aria-labelledby="hero-heading">
             <div class="container">
-                <h1 class="hero__title">
-                    <span class="line">Answering all of</span>
-                    <span class="line">your building codes</span>
-                    <span class="line">needs.</span>
-                </h1>
-                <p class="hero__intro">
-                    Our team of over 50 in-house consultants in New York City helps clients navigate even the toughest building code and zoning challenges. With 33 years of experience across construction regulations, our team supports feasibility reviews, CCD1s, amendments, fire safety, land use matters, landmark coordination, violation resolution, and all the permits, approvals, and sign-offs your project needs.
-                </p>
-                <ul class="hero__bullets">
-                    <li>From the first idea to sign-off, Outsource is by your side—helping you navigate code, construction, compliance, and whatever else your project needs.</li>
-                    <li>Partnering with Outsource Special Inspections, Inc., we deliver a streamlined, start-to-finish approach—from permits and approvals to inspections and sign-offs.</li>
-                </ul>
+                <h1 id="hero-heading" class="hero__headline animate-in">Engineering Growth Through Creative Intelligence.</h1>
+                <p class="hero__subheadline animate-in">We craft high-performance websites and social strategies that turn clicks into customers. Powered by AI, driven by design.</p>
+                <div class="cta-wrap animate-in">
+                    <a href="contact.html" class="btn-magnetic">Start Your Growth Journey</a>
+                </div>
             </div>
         </section>
 
-        <section class="video-container" id="video-container">
-            <video class="video-container__video" id="dither-video" crossorigin="anonymous" loop muted playsinline></video>
-            <canvas class="video-container__canvas" id="dither-canvas"></canvas>
-        </section>
-
-        <section class="services-section">
+        <section class="services-section" aria-labelledby="services-heading">
             <div class="container">
-                <p class="section-label">Our Services</p>
-                <h2 class="section-title">Our Services</h2>
+                <p class="section-label">The Lolikha Edge</p>
+                <h2 id="services-heading" class="section-title">Our Services</h2>
                 <div class="services-grid">
-                    <article class="service-card">
-                        <h3>Construction Expediting</h3>
-                        <p>We accelerate approvals, keep agencies moving, and eliminate delays from start to finish.</p>
-                        <a href="services/construction-expediting.html" class="link">Learn More</a>
+                    <article class="service-card animate-in">
+                        <h3>Creative Web Design</h3>
+                        <p>Websites shouldn't just look good; they should work. We focus on UX/UI that guides users toward conversion.</p>
+                        <a href="services/creative-web-design.html" class="link">Learn More</a>
                     </article>
-                    <article class="service-card">
-                        <h3>Sign-Offs & Project Closeouts</h3>
-                        <p>Lingering open applications can stall your construction project and complicate refinancing. At Outsource Consultants, we prioritize project completion, preparing for closeout even before the DOB issues the permits.</p>
-                        <a href="services/sign-offs.html" class="link">Learn More</a>
+                    <article class="service-card animate-in">
+                        <h3>SEO & AI Schema Integration</h3>
+                        <p>We don't just "do" SEO. We inject advanced AI schema markups into your site's DNA, ensuring search engines understand and rank your business higher, faster.</p>
+                        <a href="services/ai-seo-integration.html" class="link">Learn More</a>
                     </article>
-                    <article class="service-card">
-                        <h3>Class 1 Special Inspections</h3>
-                        <p>Since 2012, Outsource Consultants has provided comprehensive Special Inspection services across New York City's construction landscape.</p>
-                        <a href="services/professional-special-inspections.html" class="link">Learn More</a>
+                    <article class="service-card animate-in">
+                        <h3>Social Media Advertising</h3>
+                        <p>Data-driven campaigns that capture attention and scale brand presence creatively.</p>
+                        <a href="services/social-media-advertising.html" class="link">Learn More</a>
                     </article>
-                    <article class="service-card">
-                        <h3>Violation Resolution & Building Compliance</h3>
-                        <p>Fast, effective resolution of violations and proactive compliance to keep your project on track.</p>
-                        <a href="services/resolve-violations.html" class="link">Learn More</a>
-                    </article>
-                    <article class="service-card">
-                        <h3>Job Approvals</h3>
-                        <p>We help New York City projects move faster by efficiently navigating approvals and permits through city agencies.</p>
-                        <a href="services/job-approvals.html" class="link">Learn More</a>
-                    </article>
-                    <article class="service-card">
-                        <h3>Code & Zoning Consultation</h3>
-                        <p>At Outsource Consultants, our in-house team of expert consultants tackles the most complex Building, Zoning, Plumbing, and Mechanical Code challenges in New York City.</p>
-                        <a href="services/building-code-needs.html" class="link">Learn More</a>
+                    <article class="service-card animate-in">
+                        <h3>Brand Marketing</h3>
+                        <p>Strategy and execution that align your brand story with measurable growth and audience engagement.</p>
+                        <a href="services/brand-marketing.html" class="link">Learn More</a>
                     </article>
                 </div>
-                <p style="margin-top: 1.5rem;"><a href="services/index.html" class="btn">View All Services</a></p>
+                <p class="animate-in" style="margin-top: 1.5rem;"><a href="services/index.html" class="btn">View All Services</a></p>
             </div>
         </section>
 
-        <section class="process-section">
+        <section class="process-section" aria-labelledby="process-heading">
             <div class="container">
-                <p class="section-label">Process</p>
-                <h2 class="section-title">Here at every step</h2>
-                <p style="max-width: 42em; font-weight: 300; opacity: 0.9; margin-bottom: 2rem;">
-                    Navigating regulatory agencies can seem like an insurmountable task for architects, engineers, owners and contractors.
-                </p>
+                <p class="section-label">Our Process</p>
+                <h2 id="process-heading" class="section-title">The Process</h2>
+                <p class="animate-in" style="max-width: 42em; font-weight: 400; opacity: 0.9; margin-bottom: 2rem;">From strategy to results—we guide every step so your project becomes a growth engine.</p>
             </div>
             <section class="vertical-milestone" id="milestone-section">
                 <div class="container">
@@ -110,31 +115,23 @@
                             <span class="vertical-milestone__dot"></span>
                             <div class="vertical-milestone__content">
                                 <h3>Strategy</h3>
-                                <p>Experts in Building and Zoning Code, guiding your project with confidence.</p>
+                                <p>We align on goals, audience, and success metrics so every decision drives growth.</p>
                             </div>
                         </li>
                         <li class="vertical-milestone__item">
                             <span class="vertical-milestone__number" aria-hidden="true">02</span>
                             <span class="vertical-milestone__dot"></span>
                             <div class="vertical-milestone__content">
-                                <h3>Communication</h3>
-                                <p>Trustworthy, quick, accountable, and fluent in all things related to the Department of Buildings.</p>
+                                <h3>Navigation</h3>
+                                <p>SEO-first architecture and UX that turns visitors into leads and customers.</p>
                             </div>
                         </li>
                         <li class="vertical-milestone__item">
                             <span class="vertical-milestone__number" aria-hidden="true">03</span>
                             <span class="vertical-milestone__dot"></span>
                             <div class="vertical-milestone__content">
-                                <h3>Navigation</h3>
-                                <p>Turning city agency hurdles into on-time project milestones.</p>
-                            </div>
-                        </li>
-                        <li class="vertical-milestone__item">
-                            <span class="vertical-milestone__number" aria-hidden="true">04</span>
-                            <span class="vertical-milestone__dot"></span>
-                            <div class="vertical-milestone__content">
                                 <h3>Results</h3>
-                                <p>Fast, compliant, and precise—powered by our proprietary technologies.</p>
+                                <p>We measure, iterate, and scale—so your investment pays off in visibility and revenue.</p>
                             </div>
                         </li>
                     </ol>
@@ -142,75 +139,35 @@
             </section>
         </section>
 
-        <section class="projects-section">
-            <div class="container">
-                <p class="section-label">Work</p>
-                <h2 class="section-title">Most Recent Projects</h2>
-                <div class="projects-grid">
-                    <a href="projects/index.html" class="project-card">
-                        <div class="project-card__img"></div>
-                        <div class="project-card__inner">
-                            <div class="project-card__num">01</div>
-                            <div class="project-card__cat">Retail</div>
-                            <h3 class="project-card__title">Dolce & Gabbana Boutique</h3>
-                        </div>
-                    </a>
-                    <a href="projects/index.html" class="project-card">
-                        <div class="project-card__img"></div>
-                        <div class="project-card__inner">
-                            <div class="project-card__num">02</div>
-                            <div class="project-card__cat">Retail</div>
-                            <h3 class="project-card__title">Tiffany Flagship</h3>
-                        </div>
-                    </a>
-                    <a href="projects/index.html" class="project-card">
-                        <div class="project-card__img"></div>
-                        <div class="project-card__inner">
-                            <div class="project-card__num">03</div>
-                            <div class="project-card__cat">Hotels</div>
-                            <h3 class="project-card__title">Dream Hotel</h3>
-                        </div>
-                    </a>
-                </div>
-                <p style="margin-top: 1.5rem;"><a href="projects/index.html" class="btn">View All Projects</a></p>
-            </div>
-        </section>
-
-        <section class="testimonials-section">
+        <section class="testimonials-section" aria-labelledby="testimonials-heading">
             <div class="container">
                 <p class="section-label">Testimonials</p>
-                <h2 class="section-title">Testimonials</h2>
+                <h2 id="testimonials-heading" class="section-title">Client Testimonials</h2>
                 <div class="testimonial-slide">
-                    <blockquote>“I have worked with Outsource for many years on various projects, including the Lavelle School for the Blind. When we work with Outsource, we know that we are going to have a project that is completed on time.“</blockquote>
-                    <cite><span class="name">T.Hanks</span>, <span class="role">CRO, Gensler</span></cite>
+                    <blockquote>"Lolikha didn't just redesign our site—they built a growth engine. Our organic visibility and conversions both went up significantly."</blockquote>
+                    <cite><span class="name">Sarah M.</span>, <span class="role">Marketing Director</span></cite>
                 </div>
                 <div class="testimonial-slide" style="display:none;">
-                    <blockquote>“I have worked with Outsource for many years on various projects, including the Lavelle School for the Blind. When we work with Outsource, we know that we are going to have a project that is completed on time, within budget, and is guided by experience and expertise.“</blockquote>
-                    <cite><span class="name">Ricky Gervais</span>, <span class="role">CEO, Walmart</span></cite>
+                    <blockquote>"The combination of sharp design and AI-driven SEO gave us a clear edge. We finally rank where we need to be."</blockquote>
+                    <cite><span class="name">James K.</span>, <span class="role">Founder</span></cite>
                 </div>
                 <div class="testimonial-slide" style="display:none;">
-                    <blockquote>“I have worked with Outsource for many years on various projects, including the Lavelle School for the Blind. When we work with Outsource, we know that we are going to have a project that is completed on time.“</blockquote>
-                    <cite><span class="name">Stuart Pidd</span>, <span class="role">CMO, Skanska</span></cite>
+                    <blockquote>"Creative and technical in equal measure. Our brand and our numbers both improved."</blockquote>
+                    <cite><span class="name">Alex T.</span>, <span class="role">CEO</span></cite>
                 </div>
                 <div class="testimonial-dots">
-                    <button type="button" class="is-active" aria-label="Slide 1"></button>
-                    <button type="button" aria-label="Slide 2"></button>
-                    <button type="button" aria-label="Slide 3"></button>
+                    <button type="button" class="is-active" aria-label="Testimonial 1"></button>
+                    <button type="button" aria-label="Testimonial 2"></button>
+                    <button type="button" aria-label="Testimonial 3"></button>
                 </div>
             </div>
         </section>
 
-        <section class="news-section">
+        <section class="growth-cta" aria-labelledby="growth-cta-heading">
             <div class="container">
-                <p class="section-label">Blog</p>
-                <h2 class="section-title">Latest News</h2>
-                <ul class="news-list">
-                    <li><span class="date">02.12</span><span class="cat">Contractors</span><a href="blog/index.html">Building Inclusivity: Celebrating Black History in Construction, Architecture, & Engineering</a></li>
-                    <li><span class="date">02.07</span><span class="cat">Architects</span><a href="blog/index.html">Outsource Consultants Inc becomes SCA Certified MBE</a></li>
-                    <li><span class="date">02.07</span><span class="cat">Building Owners</span><a href="blog/index.html">Leaving Lead Behind: How NYC Plans to Replace Lead Pipes</a></li>
-                    <li><span class="date">02.07</span><span class="cat">Building Owners</span><a href="blog/index.html">Powering Up: Applications Open for E-Bike Charging Cabinets</a></li>
-                </ul>
-                <p style="margin-top: 1.5rem;"><a href="blog/index.html" class="btn">View All News</a></p>
+                <h2 id="growth-cta-heading" class="section-title">Ready to grow?</h2>
+                <p>Get a free Strategy Audit and see where your site can perform better.</p>
+                <a href="contact.html?audit=1" class="btn-magnetic btn--outline">Get Your Free Strategy Audit</a>
             </div>
         </section>
     </main>
@@ -218,51 +175,29 @@
     <footer class="site-footer">
         <div class="container">
             <ul class="footer-nav">
-                <li><a href="about.html">About</a></li>
+                <li><a href="/">Home</a></li>
                 <li><a href="services/index.html">Services</a></li>
                 <li><a href="projects/index.html">Projects</a></li>
-                <li><a href="clients.html">Clients</a></li>
-                <li><a href="culture-careers.html">Culture & Careers</a></li>
-                <li><a href="blog/index.html">Blog</a></li>
+                <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
-                <li><a href="#">FAQ</a></li>
-                <li><a href="#">Privacy Policy</a></li>
-                <li><a href="#">Terms and Conditions</a></li>
             </ul>
+            <div class="footer-insights">
+                <h3>Latest Insights</h3>
+                <ul>
+                    <li><a href="blog/index.html">How AI is changing digital marketing in 2025</a></li>
+                    <li><a href="blog/index.html">SEO-first design: why structure beats style</a></li>
+                    <li><a href="blog/index.html">From clicks to customers: building conversion into UX</a></li>
+                </ul>
+            </div>
             <div class="footer-contact">
-                <p><a href="tel:+12127320555">1-212-732-0555</a></p>
-                <p>237 West 35th Street, Suite 12A<br>New York, New York 10001</p>
-                <p><a href="mailto:contact@outsourceconsultants.com">contact@outsourceconsultants.com</a></p>
+                <p><a href="contact.html">Contact us</a> for a Growth Calculator or Strategy Audit.</p>
             </div>
         </div>
         <div class="container footer-bottom">
-            <p>© 2026 Outsource Consultants, Inc. All Rights Reserved. | Made by buzzworthy</p>
+            <p>Lolikha — Creative Solutions. Exponential Growth. &copy; 2026</p>
         </div>
     </footer>
 
     <script src="js/main.js"></script>
-    <script>
-    (function () {
-        var container = document.getElementById('video-container');
-        var video = document.getElementById('dither-video');
-        var canvas = document.getElementById('dither-canvas');
-        if (!container || !canvas) return;
-        var gl = canvas.getContext('webgl', { alpha: false, premultipliedAlpha: false });
-        if (!gl) return;
-        var vertexSrc = 'attribute vec2 aPosition;varying vec2 vUv;void main(){vUv=aPosition*0.5+0.5;gl_Position=vec4(aPosition,0.0,1.0);}';
-        var fragmentSrc = 'precision mediump float;varying vec2 vUv;uniform sampler2D uTexture;uniform float uUseVideo;uniform vec3 uPaletteDark;uniform vec3 uPaletteMid;uniform vec3 uPaletteLight;float bayer4(vec2 fc){float m[16];m[0]=0.0/16.0;m[1]=8.0/16.0;m[2]=2.0/16.0;m[3]=10.0/16.0;m[4]=12.0/16.0;m[5]=4.0/16.0;m[6]=14.0/16.0;m[7]=6.0/16.0;m[8]=3.0/16.0;m[9]=11.0/16.0;m[10]=1.0/16.0;m[11]=9.0/16.0;m[12]=15.0/16.0;m[13]=7.0/16.0;m[14]=13.0/16.0;m[15]=5.0/16.0;int x=int(mod(floor(fc.x),4.0));int y=int(mod(floor(fc.y),4.0));return m[x+y*4];}void main(){float lum;if(uUseVideo>0.5){vec4 tex=texture2D(uTexture,vUv);lum=dot(tex.rgb,vec3(0.299,0.587,0.114));}else{float g=0.15+0.5*vUv.y+0.2*sin(vUv.x*6.28318);lum=clamp(g,0.0,1.0);}float thresh=bayer4(gl_FragCoord.xy);float levels=4.0;float d=floor(lum*(levels-1.0)+thresh);d=clamp(d,0.0,levels-1.0)/(levels-1.0);vec3 col=mix(uPaletteDark,uPaletteMid,step(0.34,d));col=mix(col,uPaletteLight,step(0.67,d));col=mix(col,vec3(1.0),step(0.99,d));gl_FragColor=vec4(col,1.0);}';
-        var vsh = gl.createShader(gl.VERTEX_SHADER); gl.shaderSource(vsh, vertexSrc); gl.compileShader(vsh);
-        var fsh = gl.createShader(gl.FRAGMENT_SHADER); gl.shaderSource(fsh, fragmentSrc); gl.compileShader(fsh);
-        var program = gl.createProgram(); gl.attachShader(program, vsh); gl.attachShader(program, fsh); gl.linkProgram(program); gl.useProgram(program);
-        var buffer = gl.createBuffer(); gl.bindBuffer(gl.ARRAY_BUFFER, buffer); gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1,1,-1,-1,1,-1,1,1,-1,1,1]), gl.STATIC_DRAW);
-        var aPos = gl.getAttribLocation(program, 'aPosition'); gl.enableVertexAttribArray(aPos); gl.vertexAttribPointer(aPos, 2, gl.FLOAT, false, 0, 0);
-        var texture = gl.createTexture(); gl.bindTexture(gl.TEXTURE_2D, texture); gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE); gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE); gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR); gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
-        var uTexture = gl.getUniformLocation(program, 'uTexture'); var uUseVideo = gl.getUniformLocation(program, 'uUseVideo'); var uPaletteDark = gl.getUniformLocation(program, 'uPaletteDark'); var uPaletteMid = gl.getUniformLocation(program, 'uPaletteMid'); var uPaletteLight = gl.getUniformLocation(program, 'uPaletteLight');
-        function rgb(s){var m=s.match(/^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i);if(!m)return[0.04,0.04,0.04];return[parseInt(m[1],16)/255,parseInt(m[2],16)/255,parseInt(m[3],16)/255];}
-        function setSize(){var dpr=Math.min(window.devicePixelRatio||1,2);var w=container.offsetWidth;var h=container.offsetHeight;canvas.width=w*dpr;canvas.height=h*dpr;canvas.style.width=w+'px';canvas.style.height=h+'px';gl.viewport(0,0,canvas.width,canvas.height);}
-        function draw(){gl.viewport(0,0,canvas.width,canvas.height);var useVideo=video&&video.readyState>=2&&video.videoWidth>0;if(useVideo){gl.activeTexture(gl.TEXTURE0);gl.bindTexture(gl.TEXTURE_2D,texture);gl.texImage2D(gl.TEXTURE_2D,0,gl.RGBA,gl.RGBA,gl.UNSIGNED_BYTE,video);}gl.useProgram(program);gl.uniform1i(uTexture,0);gl.uniform1f(uUseVideo,useVideo?1.0:0.0);gl.uniform3fv(uPaletteDark,rgb('#0A0A0A'));gl.uniform3fv(uPaletteMid,rgb('#333333'));gl.uniform3fv(uPaletteLight,rgb('#00F0FF'));gl.drawArrays(gl.TRIANGLES,0,6);}
-        setSize(); window.addEventListener('resize', setSize); function loop(){draw();requestAnimationFrame(loop);} loop();
-    })();
-    </script>
 </body>
 </html>

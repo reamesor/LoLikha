@@ -90,3 +90,27 @@
     dots.forEach(function (d, i) { d.addEventListener('click', function () { show(i); }); });
     show(0);
 })();
+
+(function () {
+    var anim = document.querySelectorAll('.animate-in');
+    if (!anim.length) return;
+    var io = typeof IntersectionObserver !== 'undefined' ? new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) { if (e.isIntersecting) e.target.classList.add('is-visible'); });
+    }, { rootMargin: '0px 0px -40px 0px', threshold: 0 }) : null;
+    if (io) anim.forEach(function (el) { io.observe(el); });
+    else anim.forEach(function (el) { el.classList.add('is-visible'); });
+})();
+
+(function () {
+    var btns = document.querySelectorAll('.btn-magnetic');
+    if (!btns.length) return;
+    btns.forEach(function (btn) {
+        btn.addEventListener('mousemove', function (e) {
+            var rect = btn.getBoundingClientRect();
+            var x = (e.clientX - rect.left - rect.width / 2) * 0.15;
+            var y = (e.clientY - rect.top - rect.height / 2) * 0.15;
+            btn.style.transform = 'translate(' + x + 'px, ' + y + 'px)';
+        });
+        btn.addEventListener('mouseleave', function () { btn.style.transform = ''; });
+    });
+})();

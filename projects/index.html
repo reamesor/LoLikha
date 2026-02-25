@@ -3,9 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects | Outsource Consultants, Inc.</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@800&family=JetBrains+Mono:wght@400;500&family=Inter:wght@300;400;500&display=swap">
+    <title>Projects | Lolikha — Creative Solutions. Exponential Growth.</title>
+    <meta name="description" content="Portfolio of growth-focused web design, SEO, and brand projects. Before & after results.">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@600;700&display=swap">
     <link rel="stylesheet" href="../css/styles.css">
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://lolikha.com/#organization","name":"Lolikha","url":"https://lolikha.com/","slogan":"Creative Solutions. Exponential Growth."},{"@type":"WebSite","@id":"https://lolikha.com/#website","url":"https://lolikha.com/","name":"Lolikha","publisher":{"@id":"https://lolikha.com/#organization"}},{"@type":"ItemList","name":"Lolikha Projects","description":"Portfolio of growth-focused web design and SEO projects with before and after metrics"}]}
+    </script>
 </head>
 <body>
     <div id="cursor-dot"></div>
@@ -13,16 +17,14 @@
 
     <header class="site-header">
         <div class="container">
-            <a href="/" class="logo">Outsource <span>Consultants, Inc.</span></a>
-            <button type="button" class="nav-toggle" aria-label="Menu">Menu</button>
+            <a href="/" class="logo">Lolikha</a>
+            <button type="button" class="nav-toggle" aria-label="Open menu">Menu</button>
             <nav>
                 <ul class="nav-main">
-                    <li><a href="../about.html">About</a></li>
+                    <li><a href="/">Home</a></li>
                     <li><a href="../services/index.html">Services</a></li>
                     <li><a href="index.html">Projects</a></li>
-                    <li><a href="../clients.html">Clients</a></li>
-                    <li><a href="../culture-careers.html">Culture & Careers</a></li>
-                    <li><a href="../blog/index.html">Blog</a></li>
+                    <li><a href="../about.html">About</a></li>
                     <li><a href="../contact.html">Contact</a></li>
                 </ul>
             </nav>
@@ -30,40 +32,53 @@
     </header>
 
     <main>
-        <section class="page-hero">
+        <section class="page-hero" aria-labelledby="projects-heading">
             <div class="container">
-                <h1>Projects</h1>
-                <p>A selection of recent work across retail, hospitality, and mixed-use in New York City and beyond.</p>
+                <h1 id="projects-heading" class="animate-in">Projects</h1>
+                <p class="animate-in">Before & after: real growth from creative and technical partnership.</p>
             </div>
         </section>
 
-        <section class="projects-section">
+        <section class="projects-section" aria-labelledby="projects-grid-heading">
             <div class="container">
+                <h2 id="projects-grid-heading" class="visually-hidden">Project portfolio with before and after metrics</h2>
                 <div class="projects-grid">
-                    <a href="#" class="project-card">
-                        <div class="project-card__img"></div>
+                    <article class="project-card animate-in">
+                        <div class="project-card__img" role="img" aria-label="B2B SaaS Brand project: web design and SEO results"></div>
                         <div class="project-card__inner">
                             <div class="project-card__num">01</div>
-                            <div class="project-card__cat">Retail</div>
-                            <h3 class="project-card__title">Dolce & Gabbana Boutique</h3>
+                            <div class="project-card__cat">Web Design + SEO</div>
+                            <h2 class="project-card__title">B2B SaaS Brand</h2>
+                            <div class="project-metrics">
+                                <div class="project-metric project-metric--gain">+40% <span>SEO visibility</span></div>
+                                <div class="project-metric project-metric--gain">+25% <span>Conversion rate</span></div>
+                            </div>
                         </div>
-                    </a>
-                    <a href="#" class="project-card">
-                        <div class="project-card__img"></div>
+                    </article>
+                    <article class="project-card animate-in">
+                        <div class="project-card__img" role="img" aria-label="E-commerce launch project: social and brand campaign results"></div>
                         <div class="project-card__inner">
                             <div class="project-card__num">02</div>
-                            <div class="project-card__cat">Retail</div>
-                            <h3 class="project-card__title">Tiffany Flagship</h3>
+                            <div class="project-card__cat">Social + Brand</div>
+                            <h2 class="project-card__title">E‑commerce Launch</h2>
+                            <div class="project-metrics">
+                                <div class="project-metric project-metric--gain">+60% <span>Traffic (paid)</span></div>
+                                <div class="project-metric project-metric--gain">2.1x <span>ROAS</span></div>
+                            </div>
                         </div>
-                    </a>
-                    <a href="#" class="project-card">
-                        <div class="project-card__img"></div>
+                    </article>
+                    <article class="project-card animate-in">
+                        <div class="project-card__img" role="img" aria-label="Professional services project: AI schema and UX results"></div>
                         <div class="project-card__inner">
                             <div class="project-card__num">03</div>
-                            <div class="project-card__cat">Hotels</div>
-                            <h3 class="project-card__title">Dream Hotel</h3>
+                            <div class="project-card__cat">AI Schema + UX</div>
+                            <h2 class="project-card__title">Professional Services</h2>
+                            <div class="project-metrics">
+                                <div class="project-metric project-metric--gain">+35% <span>Organic clicks</span></div>
+                                <div class="project-metric project-metric--gain">Rich snippets <span>Live in 4 weeks</span></div>
+                            </div>
                         </div>
-                    </a>
+                    </article>
                 </div>
             </div>
         </section>
@@ -72,22 +87,26 @@
     <footer class="site-footer">
         <div class="container">
             <ul class="footer-nav">
-                <li><a href="../about.html">About</a></li>
+                <li><a href="/">Home</a></li>
                 <li><a href="../services/index.html">Services</a></li>
                 <li><a href="index.html">Projects</a></li>
-                <li><a href="../clients.html">Clients</a></li>
-                <li><a href="../culture-careers.html">Culture & Careers</a></li>
-                <li><a href="../blog/index.html">Blog</a></li>
+                <li><a href="../about.html">About</a></li>
                 <li><a href="../contact.html">Contact</a></li>
             </ul>
+            <div class="footer-insights">
+                <h3>Latest Insights</h3>
+                <ul>
+                    <li><a href="../blog/index.html">How AI is changing digital marketing</a></li>
+                    <li><a href="../blog/index.html">SEO-first design</a></li>
+                    <li><a href="../blog/index.html">From clicks to customers</a></li>
+                </ul>
+            </div>
             <div class="footer-contact">
-                <p><a href="tel:+12127320555">1-212-732-0555</a></p>
-                <p>237 West 35th Street, Suite 12A<br>New York, New York 10001</p>
-                <p><a href="mailto:contact@outsourceconsultants.com">contact@outsourceconsultants.com</a></p>
+                <p><a href="../contact.html">Contact us</a> for a Growth Calculator or Strategy Audit.</p>
             </div>
         </div>
         <div class="container footer-bottom">
-            <p>© 2026 Outsource Consultants, Inc. All Rights Reserved.</p>
+            <p>Lolikha — Creative Solutions. Exponential Growth. &copy; 2026</p>
         </div>
     </footer>
 

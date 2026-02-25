@@ -3,9 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact | Outsource Consultants, Inc.</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@800&family=JetBrains+Mono:wght@400;500&family=Inter:wght@300;400;500&display=swap">
+    <title>Contact | Lolikha — Creative Solutions. Exponential Growth.</title>
+    <meta name="description" content="Get a free Strategy Audit or start your growth journey. Contact Lolikha for creative web design, AI & SEO, and brand marketing.">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@600;700&display=swap">
     <link rel="stylesheet" href="css/styles.css">
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://lolikha.com/#organization","name":"Lolikha","url":"https://lolikha.com/","slogan":"Creative Solutions. Exponential Growth."},{"@type":"WebSite","@id":"https://lolikha.com/#website","url":"https://lolikha.com/","name":"Lolikha","publisher":{"@id":"https://lolikha.com/#organization"}},{"@type":"ContactPage","name":"Contact Lolikha","description":"Contact form for Strategy Audit and growth services.","mainEntity":{"@id":"https://lolikha.com/#organization"}}]}
+    </script>
 </head>
 <body>
     <div id="cursor-dot"></div>
@@ -13,16 +17,14 @@
 
     <header class="site-header">
         <div class="container">
-            <a href="/" class="logo">Outsource <span>Consultants, Inc.</span></a>
-            <button type="button" class="nav-toggle" aria-label="Menu">Menu</button>
+            <a href="/" class="logo">Lolikha</a>
+            <button type="button" class="nav-toggle" aria-label="Open menu">Menu</button>
             <nav>
                 <ul class="nav-main">
-                    <li><a href="about.html">About</a></li>
+                    <li><a href="/">Home</a></li>
                     <li><a href="services/index.html">Services</a></li>
                     <li><a href="projects/index.html">Projects</a></li>
-                    <li><a href="clients.html">Clients</a></li>
-                    <li><a href="culture-careers.html">Culture & Careers</a></li>
-                    <li><a href="blog/index.html">Blog</a></li>
+                    <li><a href="about.html">About</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
@@ -30,49 +32,81 @@
     </header>
 
     <main>
-        <section class="page-hero">
+        <section class="page-hero" aria-labelledby="contact-heading">
             <div class="container">
-                <h1>Let's Connect</h1>
-                <p>Let's connect on your next building project.</p>
+                <h1 id="contact-heading" class="animate-in">Let's Connect</h1>
+                <p class="animate-in">Tell us about your project. We'll qualify fit and get you on the path to growth.</p>
             </div>
         </section>
 
-        <section style="padding: 2rem 0 4rem;">
+        <section class="animate-in" style="padding: 2rem 0 4rem;" aria-label="Contact form section">
             <div class="container contact-layout">
                 <div>
-                    <form action="#" method="post">
-                        <div class="form-group">
-                            <label for="inquiry">Inquiry type</label>
-                            <select id="inquiry" name="inquiry">
-                                <option value="question">Question</option>
-                                <option value="proposal">Proposal</option>
-                            </select>
+                    <form id="contact-form" action="#" method="post" aria-label="Contact form">
+                        <div class="form-steps" role="tablist" aria-label="Form steps">
+                            <div class="step is-active" aria-selected="true" data-step="1"></div>
+                            <div class="step" data-step="2"></div>
+                            <div class="step" data-step="3"></div>
                         </div>
-                        <div class="form-row">
+
+                        <div id="panel-1" class="form-step-panel is-active" role="tabpanel">
                             <div class="form-group">
-                                <label for="first">First Name</label>
-                                <input type="text" id="first" name="first" required>
+                                <label for="goal">What are you looking for?</label>
+                                <select id="goal" name="goal" required>
+                                    <option value="">Select one</option>
+                                    <option value="strategy-audit">Free Strategy Audit</option>
+                                    <option value="growth-calculator">Growth Calculator / Assessment</option>
+                                    <option value="new-website">New website or redesign</option>
+                                    <option value="seo">SEO & AI integration</option>
+                                    <option value="social">Social media advertising</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-step-nav">
+                                <button type="button" class="btn btn--secondary" id="next-1">Next</button>
+                            </div>
+                        </div>
+
+                        <div id="panel-2" class="form-step-panel" role="tabpanel">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="first">First Name</label>
+                                    <input type="text" id="first" name="first" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="last">Last Name</label>
+                                    <input type="text" id="last" name="last" required>
+                                </div>
                             </div>
                             <div class="form-group">
-                                <label for="last">Last Name</label>
-                                <input type="text" id="last" name="last" required>
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="company">Company / Website (optional)</label>
+                                <input type="text" id="company" name="company">
+                            </div>
+                            <div class="form-step-nav">
+                                <button type="button" class="btn btn--secondary" id="back-2">Back</button>
+                                <button type="button" class="btn" id="next-2">Next</button>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" required>
+
+                        <div id="panel-3" class="form-step-panel" role="tabpanel">
+                            <div class="form-group">
+                                <label for="message">Tell us about your project or goals</label>
+                                <textarea id="message" name="message" rows="5" required placeholder="Budget, timeline, current challenges..."></textarea>
+                            </div>
+                            <div class="form-step-nav">
+                                <button type="button" class="btn btn--secondary" id="back-3">Back</button>
+                                <button type="submit" class="btn-magnetic">Submit</button>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" name="message" required></textarea>
-                        </div>
-                        <button type="submit" class="btn">Submit</button>
                     </form>
                 </div>
                 <div class="footer-contact">
-                    <p><strong>Address</strong><br>237 West 35th Street, Suite 12A<br>New York, New York 10001</p>
-                    <p style="margin-top: 1rem;"><a href="tel:+12127320555">1-212-732-0555</a></p>
-                    <p><a href="mailto:contact@outsourceconsultants.com">contact@outsourceconsultants.com</a></p>
+                    <p><strong>Growth Calculator & Strategy Audit</strong></p>
+                    <p style="margin-top: 0.5rem;">Use the form to request a free Strategy Audit. We'll review your site and goals, then show you where we can add the most value.</p>
                 </div>
             </div>
         </section>
@@ -81,25 +115,47 @@
     <footer class="site-footer">
         <div class="container">
             <ul class="footer-nav">
-                <li><a href="about.html">About</a></li>
+                <li><a href="/">Home</a></li>
                 <li><a href="services/index.html">Services</a></li>
                 <li><a href="projects/index.html">Projects</a></li>
-                <li><a href="clients.html">Clients</a></li>
-                <li><a href="culture-careers.html">Culture & Careers</a></li>
-                <li><a href="blog/index.html">Blog</a></li>
+                <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
+            <div class="footer-insights">
+                <h3>Latest Insights</h3>
+                <ul>
+                    <li><a href="blog/index.html">How AI is changing digital marketing</a></li>
+                    <li><a href="blog/index.html">SEO-first design</a></li>
+                    <li><a href="blog/index.html">From clicks to customers</a></li>
+                </ul>
+            </div>
             <div class="footer-contact">
-                <p><a href="tel:+12127320555">1-212-732-0555</a></p>
-                <p>237 West 35th Street, Suite 12A<br>New York, New York 10001</p>
-                <p><a href="mailto:contact@outsourceconsultants.com">contact@outsourceconsultants.com</a></p>
+                <p><a href="contact.html">Contact us</a> for a Growth Calculator or Strategy Audit.</p>
             </div>
         </div>
         <div class="container footer-bottom">
-            <p>© 2026 Outsource Consultants, Inc. All Rights Reserved.</p>
+            <p>Lolikha — Creative Solutions. Exponential Growth. &copy; 2026</p>
         </div>
     </footer>
 
     <script src="js/main.js"></script>
+    <script>
+    (function () {
+        var form = document.getElementById('contact-form');
+        var panels = [document.getElementById('panel-1'), document.getElementById('panel-2'), document.getElementById('panel-3')];
+        var steps = form.querySelectorAll('.form-steps .step');
+        var current = 0;
+        function showStep(i) {
+            current = i;
+            panels.forEach(function (p, j) { p.classList.toggle('is-active', j === i); });
+            steps.forEach(function (s, j) { s.classList.toggle('is-active', j === i); });
+        }
+        document.getElementById('next-1').addEventListener('click', function () { showStep(1); });
+        document.getElementById('next-2').addEventListener('click', function () { showStep(2); });
+        document.getElementById('back-2').addEventListener('click', function () { showStep(0); });
+        document.getElementById('back-3').addEventListener('click', function () { showStep(1); });
+        form.addEventListener('submit', function (e) { e.preventDefault(); alert('Thank you. We’ll be in touch soon.'); });
+    })();
+    </script>
 </body>
 </html>

@@ -1,57 +1,38 @@
-# Outsource Consultants, Inc. — Website
+# Lolikha — Creative Solutions. Exponential Growth.
 
-Static site clone of the [OCI website](https://oci.madebybuzzworthy.com/) (Outsource Consultants, Inc.): building codes, zoning, permits, and expediting in NYC.
+Static marketing site for Lolikha: creative web design, AI & SEO integration, social media advertising, and brand marketing. High-contrast design system, JSON-LD schema on every page, and step-by-step process timeline.
+
+## Technical & SEO
+
+- **Design system:** Deep charcoal `#111`, stark white `#FFF`, Inter + Montserrat (bold for headings).
+- **Layout:** 4-column grid for Services; step-by-step vertical timeline for Our Process (Strategy → Navigation → Results).
+- **JSON-LD schema:** Organization, WebSite, and ProfessionalService (or page-specific type) on every page for Google Rich Snippets.
+- **Micro-interactions:** Fade-in-up scroll animations (`.animate-in` + IntersectionObserver); magnetic hover on `.btn-magnetic` CTAs.
+- **SEO architecture:** Semantic HTML5 (`<header>`, `<main>`, `<section>`, `<footer>`, `<article>`, `<nav>`). Use descriptive `alt` on all `<img>` tags when adding real images; project placeholders use `aria-label` for accessibility.
 
 ## Stack
 
 - Plain HTML, CSS, and JavaScript
 - No build step; ready for static hosting
-- WebGL dither effect on homepage (Bayer ordered dither)
-- Custom cursor and vertical milestone scroll effects
+- `js/main.js`: cursor, milestone scroll, nav toggle, testimonial slider, global fade-in and magnetic CTA
 
 ## Run locally
 
 ```bash
-# From project root
 python3 -m http.server 8787
 ```
 
 Open [http://localhost:8787](http://localhost:8787).
 
-## Deploy on GitHub + Vercel
+## Deploy (e.g. Vercel)
 
-### 1. Create a GitHub repo and push
-
-- On [GitHub](https://github.com/new), create a **new repository** (e.g. `oci-website`). Do **not** add a README or .gitignore (you already have them).
-- In this project folder, add the remote and push:
-
-```bash
-cd "/Users/sor/Documents/Cursor Apps/Lolikha"
-git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git
-git push -u origin main
-```
-
-(Replace `YOUR_USERNAME` and `YOUR_REPO_NAME` with your GitHub username and repo name.)
-
-### 2. Deploy on Vercel
-
-1. Go to [vercel.com](https://vercel.com) and sign in (GitHub is easiest).
-2. Click **Add New…** → **Project**.
-3. **Import** your GitHub repository (e.g. `oci-website`).
-4. Leave settings as-is: **Framework Preset:** Other, **Root Directory:** default, **Build Command** and **Output Directory** empty.
-5. Click **Deploy**. Your site will be live at `https://your-project.vercel.app`.
+Import the repo; use **Framework: Other**, no build command. Static files are served from the project root.
 
 ## Structure
 
-- `index.html` — Home (hero, services, process, projects, testimonials, news)
-- `about.html`, `contact.html`, `clients.html`, `culture-careers.html`
-- `services/` — Services index + per-service pages
-- `projects/` — Projects index
-- `blog/` — Blog / news index
-- `css/styles.css` — Shared styles
-- `js/main.js` — Cursor, milestone scroll, nav toggle, testimonial slider
-
-## License
-
-Clone for reference/portfolio. Original design and content: Outsource Consultants, Inc. / [Made by Buzzworthy](https://oci.madebybuzzworthy.com/).
-# LoLikha
+- `index.html` — Home (hero, 4-col services, process timeline, testimonials, growth CTA)
+- `about.html`, `contact.html` (multi-step form)
+- `services/index.html` + `creative-web-design.html`, `ai-seo-integration.html`, `social-media-advertising.html`, `brand-marketing.html`
+- `projects/index.html` — Portfolio with before/after metrics
+- `blog/index.html` — Latest Insights
+- `css/styles.css`, `js/main.js`
