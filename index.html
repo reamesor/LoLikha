@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lolikha | Creative Solutions. Exponential Growth.</title>
-    <meta name="description" content="We bridge the gap between creative storytelling and technical performance. AI-driven schema, SEO-first architecture, and bespoke web design that builds growth engines.">
+    <meta name="description" content="Engineering Growth Through Creative Intelligence. Lolikha is a family-run creative solutions house: high-fidelity production (film, events) meets technical growth precision (SEO, AI, web).">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@600;700&display=swap">
     <link rel="stylesheet" href="css/styles.css">
     <script type="application/ld+json">
@@ -16,8 +16,23 @@
                 "@id": "https://lolikha.com/#organization",
                 "name": "Lolikha",
                 "url": "https://lolikha.com/",
-                "description": "Creative Solutions. Exponential Growth. We bridge the gap between creative storytelling and technical performance through AI-driven schema, SEO-first architecture, and bespoke web design.",
-                "slogan": "Creative Solutions. Exponential Growth."
+                "description": "Lolikha empowers brands through Creative Intelligence—blending world-class visual storytelling with data-backed growth strategies. High-fidelity production and digital engineering.",
+                "slogan": "Engineering Growth Through Creative Intelligence."
+            },
+            {
+                "@type": "Brand",
+                "@id": "https://lolikha.com/#brand",
+                "name": "Lolikha",
+                "description": "Lolikha empowers brands through Creative Intelligence—world-class visual storytelling and data-backed growth. Film, events, web, SEO, and social.",
+                "url": "https://lolikha.com/"
+            },
+            {
+                "@type": "LocalBusiness",
+                "@id": "https://lolikha.com/#localbusiness",
+                "name": "Lolikha",
+                "description": "Family-run creative solutions house: cinematic production, event curation, creative direction, web architecture, AI schema, and social advertising.",
+                "url": "https://lolikha.com/",
+                "brand": { "@id": "https://lolikha.com/#brand" }
             },
             {
                 "@type": "WebSite",
@@ -30,9 +45,9 @@
                 "@type": "ProfessionalService",
                 "@id": "https://lolikha.com/#service",
                 "name": "Lolikha",
-                "description": "Creative web design, AI & SEO integration, social media advertising, and brand marketing. We build high-performance websites and growth engines.",
+                "description": "Lolikha delivers Creative Intelligence: high-fidelity production (film, events, creative direction) and digital engineering (web, AI schema, SEO, social advertising).",
                 "provider": { "@id": "https://lolikha.com/#organization" },
-                "serviceType": ["Creative Web Design", "SEO & AI Schema Integration", "Social Media Advertising", "Brand Marketing"]
+                "serviceType": ["Cinematic Storytelling", "Event Curation", "Creative Direction", "Creative Web Architecture", "AI Schema & SEO Integration", "Social Media Advertising"]
             }
         ]
     }
@@ -40,11 +55,11 @@
 </head>
 <body>
     <div id="cursor-dot"></div>
-    <div id="cursor-outline"></div>
+    <div id="cursor-spotlight"></div>
 
     <header class="site-header">
         <div class="container">
-            <a href="/" class="logo">Lolikha</a>
+            <a href="/" class="logo"><img src="images/logo.png" alt="Lolikha — Engineering Growth Through Creative Intelligence"></a>
             <button type="button" class="nav-toggle" aria-label="Open menu">Menu</button>
             <nav>
                 <ul class="nav-main">
@@ -60,9 +75,15 @@
 
     <main>
         <section class="hero-lolikha" aria-labelledby="hero-heading">
-            <div class="container">
+            <div class="hero-bg" aria-hidden="true">
+                <div class="hero-bg__gradient"></div>
+                <div class="hero-bg__grid"></div>
+                <div class="hero-bg__glow" id="hero-glow"></div>
+                <div class="hero-bg__grain"></div>
+            </div>
+            <div class="container hero-lolikha__content">
                 <h1 id="hero-heading" class="hero__headline animate-in">Engineering Growth Through Creative Intelligence.</h1>
-                <p class="hero__subheadline animate-in">We craft high-performance websites and social strategies that turn clicks into customers. Powered by AI, driven by design.</p>
+                <p class="hero__subheadline animate-in">A family-run creative solutions house where high-fidelity production meets technical growth precision. Precision, creativity, and growth—engineered together.</p>
                 <div class="cta-wrap animate-in">
                     <a href="contact.html" class="btn-magnetic">Start Your Growth Journey</a>
                 </div>
@@ -73,29 +94,50 @@
             <div class="container">
                 <p class="section-label">The Lolikha Edge</p>
                 <h2 id="services-heading" class="section-title">Our Services</h2>
-                <div class="services-grid">
-                    <article class="service-card animate-in">
-                        <h3>Creative Web Design</h3>
-                        <p>Websites shouldn't just look good; they should work. We focus on UX/UI that guides users toward conversion.</p>
-                        <a href="services/creative-web-design.html" class="link">Learn More</a>
-                    </article>
-                    <article class="service-card animate-in">
-                        <h3>SEO & AI Schema Integration</h3>
-                        <p>We don't just "do" SEO. We inject advanced AI schema markups into your site's DNA, ensuring search engines understand and rank your business higher, faster.</p>
-                        <a href="services/ai-seo-integration.html" class="link">Learn More</a>
-                    </article>
-                    <article class="service-card animate-in">
-                        <h3>Social Media Advertising</h3>
-                        <p>Data-driven campaigns that capture attention and scale brand presence creatively.</p>
-                        <a href="services/social-media-advertising.html" class="link">Learn More</a>
-                    </article>
-                    <article class="service-card animate-in">
-                        <h3>Brand Marketing</h3>
-                        <p>Strategy and execution that align your brand story with measurable growth and audience engagement.</p>
-                        <a href="services/brand-marketing.html" class="link">Learn More</a>
-                    </article>
+                <p class="services-intro reveal-up">Two pillars: <strong>High-Fidelity Production</strong> (film, events, creative direction) and <strong>Digital Engineering</strong> (web, SEO, social). Art and technology driving exponential growth.</p>
+                <div class="services-pillars">
+                    <div class="services-pillar">
+                        <h3 class="pillar-title">High-Fidelity Production</h3>
+                        <div class="services-grid">
+                            <article class="service-card animate-in">
+                                <h4>Cinematic Storytelling</h4>
+                                <p>Professional film and video production for brands and commercials. World-class visual storytelling that converts.</p>
+                                <a href="services/cinematic-storytelling.html" class="link">Learn More</a>
+                            </article>
+                            <article class="service-card animate-in">
+                                <h4>Event Curation</h4>
+                                <p>Immersive brand events that blend physical and digital impact. Precision-led experiences that scale.</p>
+                                <a href="services/event-curation.html" class="link">Learn More</a>
+                            </article>
+                            <article class="service-card animate-in">
+                                <h4>Creative Direction</h4>
+                                <p>End-to-end visual conceptualization. From concept to execution—one creative vision, unmatched commitment.</p>
+                                <a href="services/creative-direction.html" class="link">Learn More</a>
+                            </article>
+                        </div>
+                    </div>
+                    <div class="services-pillar">
+                        <h3 class="pillar-title">Digital Engineering</h3>
+                        <div class="services-grid">
+                            <article class="service-card animate-in">
+                                <h4>Creative Web Architecture</h4>
+                                <p>Bespoke, high-performance websites built for conversion. UX and technical precision in one.</p>
+                                <a href="services/creative-web-design.html" class="link">Learn More</a>
+                            </article>
+                            <article class="service-card animate-in">
+                                <h4>AI Schema & SEO Integration</h4>
+                                <p>Technical engineering that ensures search engine dominance. AI-driven schema and SEO-first architecture.</p>
+                                <a href="services/ai-seo-integration.html" class="link">Learn More</a>
+                            </article>
+                            <article class="service-card animate-in">
+                                <h4>Social Media Advertising</h4>
+                                <p>Data-driven campaigns scaling businesses through creative assets. Growth and creativity in lockstep.</p>
+                                <a href="services/social-media-advertising.html" class="link">Learn More</a>
+                            </article>
+                        </div>
+                    </div>
                 </div>
-                <p class="animate-in" style="margin-top: 1.5rem;"><a href="services/index.html" class="btn">View All Services</a></p>
+                <p class="animate-in" style="margin-top: 2rem;"><a href="services/index.html" class="btn">View All Services</a></p>
             </div>
         </section>
 
@@ -103,7 +145,7 @@
             <div class="container">
                 <p class="section-label">Our Process</p>
                 <h2 id="process-heading" class="section-title">The Process</h2>
-                <p class="animate-in" style="max-width: 42em; font-weight: 400; opacity: 0.9; margin-bottom: 2rem;">From strategy to results—we guide every step so your project becomes a growth engine.</p>
+                <p class="section-intro animate-in">From strategy to results—we guide every step so your project becomes a growth engine.</p>
             </div>
             <section class="vertical-milestone" id="milestone-section">
                 <div class="container">
@@ -114,29 +156,37 @@
                             <span class="vertical-milestone__number" aria-hidden="true">01</span>
                             <span class="vertical-milestone__dot"></span>
                             <div class="vertical-milestone__content">
-                                <h3>Strategy</h3>
-                                <p>We align on goals, audience, and success metrics so every decision drives growth.</p>
+                                <h3>Discovery</h3>
+                                <p>Uncovering market gaps and identifying your unique Creative Edge. Strategy before execution.</p>
                             </div>
                         </li>
                         <li class="vertical-milestone__item">
                             <span class="vertical-milestone__number" aria-hidden="true">02</span>
                             <span class="vertical-milestone__dot"></span>
                             <div class="vertical-milestone__content">
-                                <h3>Navigation</h3>
-                                <p>SEO-first architecture and UX that turns visitors into leads and customers.</p>
+                                <h3>Engineering</h3>
+                                <p>Deploying SEO-first code, AI-driven schema, and high-fidelity creative execution.</p>
                             </div>
                         </li>
                         <li class="vertical-milestone__item">
                             <span class="vertical-milestone__number" aria-hidden="true">03</span>
                             <span class="vertical-milestone__dot"></span>
                             <div class="vertical-milestone__content">
-                                <h3>Results</h3>
-                                <p>We measure, iterate, and scale—so your investment pays off in visibility and revenue.</p>
+                                <h3>Scaling</h3>
+                                <p>Continuous optimization and growth tracking. Precision-led scaling that sustains results.</p>
                             </div>
                         </li>
                     </ol>
                 </div>
             </section>
+        </section>
+
+        <section class="why-section" aria-labelledby="why-heading">
+            <div class="container">
+                <p class="section-label">Our Philosophy</p>
+                <h2 id="why-heading" class="section-title reveal-up">Why Creative Growth?</h2>
+                <p class="why-statement reveal-up">Most agencies choose between aesthetics and performance. At Lolikha, we treat design as a technical asset. A beautiful site is a failure if it doesn't rank; a high-ranking site is a failure if it doesn't convert.</p>
+            </div>
         </section>
 
         <section class="testimonials-section" aria-labelledby="testimonials-heading">

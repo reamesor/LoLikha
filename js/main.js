@@ -1,28 +1,66 @@
 (function () {
     var dot = document.getElementById('cursor-dot');
-    var outline = document.getElementById('cursor-outline');
-    if (!dot || !outline) return;
-    var mouseX = 0, mouseY = 0, outlineX = 0, outlineY = 0;
+    var spotlight = document.getElementById('cursor-spotlight') || document.getElementById('cursor-outline');
+    if (!dot) return;
+    var mouseX = 0, mouseY = 0, spotX = 0, spotY = 0;
     document.addEventListener('mousemove', function (e) {
         mouseX = e.clientX;
         mouseY = e.clientY;
-        dot.style.left = (mouseX - 4) + 'px';
-        dot.style.top = (mouseY - 4) + 'px';
+        dot.style.left = mouseX + 'px';
+        dot.style.top = mouseY + 'px';
     });
-    function animateOutline() {
-        outlineX += (mouseX - outlineX) * 0.15;
-        outlineY += (mouseY - outlineY) * 0.15;
-        outline.style.left = (outlineX - 20) + 'px';
-        outline.style.top = (outlineY - 20) + 'px';
-        requestAnimationFrame(animateOutline);
+    function animateSpotlight() {
+        spotX += (mouseX - spotX) * 0.12;
+        spotY += (mouseY - spotY) * 0.12;
+        if (spotlight) {
+            spotlight.style.left = spotX + 'px';
+            spotlight.style.top = spotY + 'px';
+        }
+        requestAnimationFrame(animateSpotlight);
     }
-    animateOutline();
-    document.querySelectorAll('a, button, [role="button"], .btn').forEach(function (el) {
-        el.addEventListener('mouseenter', function () { outline.classList.add('hover'); });
-        el.addEventListener('mouseleave', function () { outline.classList.remove('hover'); });
+    animateSpotlight();
+    document.querySelectorAll('a, button, [role="button"], .btn, .btn-magnetic').forEach(function (el) {
+        el.addEventListener('mouseenter', function () {
+            if (dot) dot.classList.add('hover');
+            if (spotlight) spotlight.classList.add('hover');
+        });
+        el.addEventListener('mouseleave', function () {
+            if (dot) dot.classList.remove('hover');
+            if (spotlight) spotlight.classList.remove('hover');
+        });
     });
-    document.addEventListener('mousedown', function () { outline.classList.add('click'); });
-    document.addEventListener('mouseup', function () { outline.classList.remove('click'); });
+    document.addEventListener('mousedown', function () {
+        if (spotlight) spotlight.classList.add('click');
+    });
+    document.addEventListener('mouseup', function () {
+        if (spotlight) spotlight.classList.remove('click');
+    });
+})();
+
+(function () {
+    var glow = document.getElementById('hero-glow');
+    var hero = document.querySelector('.hero-lolikha');
+    if (!glow || !hero) return;
+    var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var targetX = 0.5, targetY = 0.5;
+    var currentX = 0.5, currentY = 0.5;
+    function onMove(e) {
+        var rect = hero.getBoundingClientRect();
+        targetX = (e.clientX - rect.left) / rect.width;
+        targetY = (e.clientY - rect.top) / rect.height;
+    }
+    function animate() {
+        currentX += (targetX - currentX) * 0.08;
+        currentY += (targetY - currentY) * 0.08;
+        if (!reduceMotion) {
+            var x = (currentX - 0.5) * 30;
+            var y = (currentY - 0.5) * 30;
+            glow.style.transform = 'translate(calc(-50% + ' + x + 'px), calc(-50% + ' + y + 'px))';
+        }
+        requestAnimationFrame(animate);
+    }
+    hero.addEventListener('mousemove', onMove);
+    animate();
 })();
 
 (function () {
@@ -92,11 +130,11 @@
 })();
 
 (function () {
-    var anim = document.querySelectorAll('.animate-in');
+    var anim = document.querySelectorAll('.animate-in, .reveal-up, .reveal-left, .reveal-right');
     if (!anim.length) return;
     var io = typeof IntersectionObserver !== 'undefined' ? new IntersectionObserver(function (entries) {
         entries.forEach(function (e) { if (e.isIntersecting) e.target.classList.add('is-visible'); });
-    }, { rootMargin: '0px 0px -40px 0px', threshold: 0 }) : null;
+    }, { rootMargin: '0px 0px -60px 0px', threshold: 0 }) : null;
     if (io) anim.forEach(function (el) { io.observe(el); });
     else anim.forEach(function (el) { el.classList.add('is-visible'); });
 })();
