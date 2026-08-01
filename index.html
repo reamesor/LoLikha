@@ -24,27 +24,31 @@
     <div data-header></div>
 
     <main id="main">
-      <section class="hero" aria-labelledby="hero-title">
+      <section class="hero" aria-labelledby="hero-title" data-hero>
+        <div class="hero-atmosphere" aria-hidden="true" data-hero-atmosphere>
+          <div class="hero-orb hero-orb--a" data-orb="0.04"></div>
+          <div class="hero-orb hero-orb--b" data-orb="0.07"></div>
+          <div class="hero-orb hero-orb--c" data-orb="0.03"></div>
+          <div class="hero-geo" data-orb="0.02">
+            <span class="hero-geo-arc"></span>
+            <span class="hero-geo-line"></span>
+          </div>
+          <div class="hero-grain"></div>
+        </div>
         <div class="container">
-          <p class="eyebrow" data-hero-fade style="margin-bottom:1rem">Lolikha</p>
+          <p class="eyebrow" data-hero-fade>Lolikha</p>
           <h1 class="hero-title" id="hero-title">
             <span class="line"><span class="word" data-hero-word>Elevate.</span></span>
             <span class="line"><span class="word" data-hero-word"><em>Everything.</em></span></span>
           </h1>
           <span class="hero-underline" aria-hidden="true"></span>
-          <div class="hero-meta">
-            <div class="clock" data-hero-fade>
-              <span class="clock-dot" aria-hidden="true"></span>
-              <span>PHT</span>
-              <span data-clock>--:--</span>
-            </div>
-            <p class="hero-lede" data-hero-fade>
-              Websites, content, social, and business management — all under one creative lead.
-            </p>
-            <button class="email-copy" type="button" data-copy-email="hello@lolikha.com" data-hero-fade data-magnetic>
-              <span>hello@lolikha.com</span>
-              <span class="copy-label">Copy</span>
-            </button>
+          <p class="hero-lede" data-hero-fade>
+            Websites, content, social, and business management — all under one creative lead.
+          </p>
+          <div class="hero-cta" data-hero-fade>
+            <a class="btn btn-dark btn-slide" href="contact/index.html" data-magnetic>
+              <span class="btn-label"><span>Book a call</span><span>Book a call</span></span>
+            </a>
           </div>
         </div>
       </section>

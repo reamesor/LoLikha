@@ -173,42 +173,46 @@
     });
   }
 
-  /* PH / Manila clock */
-  const clockEl = document.querySelector("[data-clock]");
-  if (clockEl) {
-    const tick = () => {
-      const parts = new Intl.DateTimeFormat("en-GB", {
-        timeZone: "Asia/Manila",
-        hour: "2-digit",
-        minute: "2-digit",
-        hour12: false,
-      }).formatToParts(new Date());
-      const hour = parts.find((p) => p.type === "hour")?.value ?? "--";
-      const minute = parts.find((p) => p.type === "minute")?.value ?? "--";
-      clockEl.textContent = `${hour}:${minute}`;
-    };
-    tick();
-    setInterval(tick, 1000);
-  }
+  /* Hero atmosphere — pointer-reactive only (no idle page drift) */
+  const hero = document.querySelector("[data-hero]");
+  const atmosphereLayers = document.querySelectorAll("[data-orb]");
+  if (hero && atmosphereLayers.length && finePointer && canHover && !reduceMotion) {
+    const target = { x: 0, y: 0 };
+    const current = { x: 0, y: 0 };
+    let atmosRaf = 0;
 
-  /* Copy email */
-  document.querySelectorAll("[data-copy-email]").forEach((btn) => {
-    btn.addEventListener("click", async () => {
-      const email = btn.dataset.copyEmail || "hello@lolikha.com";
-      const label = btn.querySelector(".copy-label");
-      try {
-        await navigator.clipboard.writeText(email);
-        btn.classList.add("is-copied");
-        if (label) label.textContent = "Copied";
-        setTimeout(() => {
-          btn.classList.remove("is-copied");
-          if (label) label.textContent = "Copy";
-        }, 1600);
-      } catch {
-        if (label) label.textContent = "Failed";
+    const paintAtmosphere = () => {
+      current.x += (target.x - current.x) * 0.08;
+      current.y += (target.y - current.y) * 0.08;
+      atmosphereLayers.forEach((layer) => {
+        const depth = Number(layer.getAttribute("data-orb")) || 0.04;
+        layer.style.transform = `translate3d(${current.x * depth * 100}px, ${current.y * depth * 100}px, 0)`;
+      });
+      if (Math.abs(target.x - current.x) > 0.001 || Math.abs(target.y - current.y) > 0.001) {
+        atmosRaf = requestAnimationFrame(paintAtmosphere);
+      } else {
+        atmosRaf = 0;
       }
+    };
+
+    hero.addEventListener(
+      "pointermove",
+      (event) => {
+        if (event.pointerType && event.pointerType !== "mouse") return;
+        const rect = hero.getBoundingClientRect();
+        target.x = (event.clientX - rect.left) / rect.width - 0.5;
+        target.y = (event.clientY - rect.top) / rect.height - 0.5;
+        if (!atmosRaf) atmosRaf = requestAnimationFrame(paintAtmosphere);
+      },
+      { passive: true }
+    );
+
+    hero.addEventListener("pointerleave", () => {
+      target.x = 0;
+      target.y = 0;
+      if (!atmosRaf) atmosRaf = requestAnimationFrame(paintAtmosphere);
     });
-  });
+  }
 
   /* FAQ */
   document.querySelectorAll("[data-faq] .faq-item").forEach((item) => {
@@ -232,13 +236,14 @@
     const tl = gsap.timeline({ defaults: { ease: "power4.out" } });
     tl.from("[data-hero-word]", { yPercent: 110, duration: 1.15, stagger: 0.1 }, 0.05)
       .from(".hero-underline", { scaleX: 0, duration: 0.85 }, 0.5)
-      .from("[data-hero-fade]", { y: 24, opacity: 0, duration: 0.8, stagger: 0.08 }, 0.4);
+      .from("[data-hero-fade]", { y: 28, opacity: 0, duration: 0.85, stagger: 0.1 }, 0.45)
+      .from(".hero-atmosphere", { opacity: 0, duration: 1.2, ease: "power2.out" }, 0);
 
     gsap.utils.toArray("[data-reveal]").forEach((el) => {
       gsap.from(el, {
-        y: 48,
+        y: 56,
         opacity: 0,
-        duration: 1,
+        duration: 1.05,
         ease: "power3.out",
         scrollTrigger: { trigger: el, start: "top 88%", once: true },
       });
@@ -246,10 +251,10 @@
 
     gsap.utils.toArray("[data-reveal-stagger]").forEach((group) => {
       gsap.from(group.children, {
-        y: 40,
+        y: 48,
         opacity: 0,
-        duration: 0.9,
-        stagger: 0.08,
+        duration: 0.95,
+        stagger: 0.09,
         ease: "power3.out",
         scrollTrigger: { trigger: group, start: "top 86%", once: true },
       });
