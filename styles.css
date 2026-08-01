@@ -20,8 +20,8 @@
   --radius-xl: 40px;
   --radius-pill: 999px;
   --shadow: 0 12px 40px rgba(0, 0, 0, 0.06);
-  --container: 1400px;
-  --gutter: clamp(20px, 3.2vw, 36px);
+  --container: 1680px;
+  --gutter: clamp(16px, 2.2vw, 28px);
   --header-h: 72px;
   --font-serif: "Fraunces", Georgia, "Times New Roman", serif;
   --font-sans: "Inter", system-ui, -apple-system, sans-serif;
@@ -520,8 +520,8 @@ p {
   position: absolute;
   left: 50%;
   top: 58%;
-  width: min(1480px, 120vw);
-  height: min(560px, 62vw);
+  width: min(1760px, 108%);
+  height: min(620px, 56vw);
   translate: -50% -38%;
   opacity: 0;
   transition: opacity 1.1s var(--ease);
@@ -708,7 +708,7 @@ p {
 
 .reel-stage {
   position: relative;
-  max-width: min(1320px, calc(100% - 32px));
+  max-width: min(var(--container), calc(100% - 24px));
   margin: 0 auto 20px;
   border-radius: var(--radius-lg);
   overflow: hidden;
@@ -2223,12 +2223,29 @@ body.is-leaving {
 
 .page-shell {
   min-height: 100svh;
-  margin: clamp(0.2rem, 0.45vw, 0.4rem);
-  border-radius: clamp(18px, 2vw, 28px);
+  margin: 3px;
+  border-radius: clamp(12px, 1.1vw, 18px);
   overflow: clip;
   background: var(--bg);
   border: 1px solid var(--line);
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.04);
+}
+
+@media (min-width: 1400px) {
+  :root {
+    --container: 1720px;
+    --gutter: clamp(18px, 1.6vw, 24px);
+  }
+
+  .page-shell {
+    margin: 2px;
+    border-radius: 14px;
+  }
+
+  .hero-art {
+    width: min(1860px, 110%);
+    height: min(640px, 52vw);
+  }
 }
 
 body.has-cursor,
