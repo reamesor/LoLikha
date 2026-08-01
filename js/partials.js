@@ -68,7 +68,14 @@
         </div>
         <div class="footer-bottom">
           <p>© <span data-year>2026</span> Lolikha. All rights reserved.</p>
-          <p>Billed in USD via Wise</p>
+          <div class="socials">
+            <a href="https://www.instagram.com/lolikha_/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3.5" y="3.5" width="17" height="17" rx="5" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor"/></svg>
+            </a>
+            <a href="https://www.facebook.com/Lolikha.co" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+              <svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 9h3V6h-3c-1.7 0-3 1.3-3 3v2H8v3h3v7h3v-7h3l1-3h-4V9c0-.6.4-1 1-1z" fill="currentColor"/></svg>
+            </a>
+          </div>
         </div>
       </div>
     </footer>`;
