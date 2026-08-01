@@ -2295,6 +2295,6 @@ body.has-cursor .cursor {
   }
 }
 
-.service-row {
-  cursor: default;
+a.service-row {
+  cursor: pointer;
 }

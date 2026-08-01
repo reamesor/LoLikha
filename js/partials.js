@@ -24,6 +24,7 @@
         <nav id="site-nav" class="site-nav" data-nav>
           <a href="${r("works/index.html")}" data-magnetic>Works</a>
           <a href="${r("about/index.html")}" data-magnetic>About</a>
+          <a href="${r("pricing/index.html")}" data-magnetic>Pricing</a>
           <a href="${r("index.html")}#services" data-magnetic>Services</a>
           <a class="btn btn-dark btn-slide" href="${r("contact/index.html")}" data-magnetic>${btnLabel("Book a call")}</a>
         </nav>
@@ -47,15 +48,16 @@
               <a href="${r("index.html")}">Home</a>
               <a href="${r("works/index.html")}">Works</a>
               <a href="${r("about/index.html")}">About</a>
+              <a href="${r("pricing/index.html")}">Pricing</a>
               <a href="${r("contact/index.html")}">Contact</a>
             </div>
             <div>
               <h4>Services</h4>
-              <a href="${r("index.html")}#services">Website Design</a>
-              <a href="${r("index.html")}#services">Video Production</a>
-              <a href="${r("index.html")}#services">Social Media</a>
-              <a href="${r("index.html")}#services">Business Support</a>
-              <a href="${r("index.html")}#services">Content Design</a>
+              <a href="${r("services/website-design-management.html")}">Website Design</a>
+              <a href="${r("services/video-editing-production.html")}">Video Production</a>
+              <a href="${r("services/social-media-management.html")}">Social Media</a>
+              <a href="${r("services/business-executive-support.html")}">Business Support</a>
+              <a href="${r("services/content-design-production.html")}">Content Design</a>
             </div>
             <div>
               <h4>Contact</h4>
