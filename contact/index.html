@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact — Orionix Studio</title>
-  <meta name="description" content="Get in touch with Orionix Studio to start your next project." />
+  <title>Contact — Lolikha</title>
+  <meta name="description" content="Book a project with Lolikha. International clients welcome. Billed in USD via Wise." />
+  <link rel="icon" href="../images/logo.png" type="image/png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -12,112 +13,78 @@
 </head>
 <body data-root="../">
   <a class="skip-link" href="#main">Skip to content</a>
-  <div data-header></div>
-  <main id="main">
+  <div class="scroll-progress" aria-hidden="true"><span data-progress></span></div>
+  <div class="cursor" data-cursor aria-hidden="true">
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"></div>
+    <div class="cursor-label" data-cursor-label></div>
+  </div>
 
-    <section class="page-hero page-hero-left">
-      <div class="container">
-        <p class="eyebrow">Contact</p>
-        <h1>Got a project in mind?</h1>
-      </div>
-    </section>
-    <section class="section-sm" style="padding-top:0">
-      <div class="container contact-layout">
-        <form class="contact-form" data-contact-form>
-          <div class="field">
-            <label for="name">Name</label>
-            <input id="name" name="name" type="text" autocomplete="name" required />
-          </div>
-          <div class="field">
-            <label for="email">Email</label>
-            <input id="email" name="email" type="email" autocomplete="email" required />
-          </div>
-          <div class="field">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" required></textarea>
-          </div>
-          <button class="btn btn-dark" type="submit">Send message</button>
-          <p class="form-status" data-form-status></p>
-        </form>
-        <aside class="contact-aside">
-          <p class="eyebrow">Short in time?</p>
-          <h2>Let’s turn your vision into reality</h2>
-          <p>Contact us today, and let’s start a conversation about your next project.</p>
-          <a class="btn btn-dark" href="https://cal.com/" target="_blank" rel="noopener">Book a call</a>
-          <p style="margin-top:28px;font-size:14px;color:var(--muted)">Or email <strong>hello@orionix.com</strong></p>
-        </aside>
-      </div>
-    </section>
-    <section class="section" aria-labelledby="faq-title">
-      <div class="container">
-        <div class="section-head" style="justify-content:center;text-align:center">
-          <div>
-            <p class="eyebrow">FAQ</p>
-            <h2 id="faq-title">Questions? We are here to help</h2>
-          </div>
+  <div class="page-shell">
+    <div data-header></div>
+    <main id="main">
+      <section class="page-hero">
+        <div class="container" data-reveal>
+          <p class="eyebrow">Contact</p>
+          <h1>Choose Elevated.</h1>
+          <p class="lede">Tell us what you’re building. We’ll follow up on scope, timing, and next steps.</p>
         </div>
-        <div class="faq-list" data-faq>
-        <div class="faq-item">
-          <button class="faq-q" type="button">
-            <span class="faq-num">1</span>
-            <span>What services does Orionix provide?</span>
-            <span aria-hidden="true">+</span>
-          </button>
-          <div class="faq-a"><p>Orionix offers brand identity & strategy, website design & development, UI/UX & product design, digital marketing & growth, and social media & content marketing.</p></div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q" type="button">
-            <span class="faq-num">2</span>
-            <span>How long does a typical project take?</span>
-            <span aria-hidden="true">+</span>
-          </button>
-          <div class="faq-a"><p>Most projects run 3–8 weeks depending on scope. Launch plans typically take 3–4 weeks; Growth plans take 6–8 weeks. Retainer work runs in continuous monthly cycles.</p></div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q" type="button">
-            <span class="faq-num">3</span>
-            <span>Do you work with startups or established companies?</span>
-            <span aria-hidden="true">+</span>
-          </button>
-          <div class="faq-a"><p>Both. We partner with early-stage startups establishing their presence and established companies ready to scale their digital experience.</p></div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q" type="button">
-            <span class="faq-num">4</span>
-            <span>What is your design and development process?</span>
-            <span aria-hidden="true">+</span>
-          </button>
-          <div class="faq-a"><p>We move through Discovery, Strategy, and Design — with clear milestones, collaborative reviews, and organized handoff at every stage.</p></div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q" type="button">
-            <span class="faq-num">5</span>
-            <span>Can Orionix redesign an existing brand or website?</span>
-            <span aria-hidden="true">+</span>
-          </button>
-          <div class="faq-a"><p>Yes. We regularly refresh and rebuild existing brands and digital products while preserving what already works and elevating what doesn’t.</p></div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q" type="button">
-            <span class="faq-num">6</span>
-            <span>Do you provide ongoing support after launch?</span>
-            <span aria-hidden="true">+</span>
-          </button>
-          <div class="faq-a"><p>Yes. Our Scale plan and creative retainers provide ongoing partnership across brand, product, and marketing after launch.</p></div>
-        </div>
-        </div>
-      </div>
-    </section>
-    <section class="cta-band" aria-labelledby="cta-title">
-      <div class="container">
-        <p class="eyebrow">Idea → Reality</p>
-        <h2 id="cta-title">Got a great idea you want to bring to life?</h2>
-        <a class="btn btn-dark" href="../contact/index.html">Book a call</a>
-      </div>
-    </section>
+      </section>
 
-  </main>
-  <div data-footer></div>
+      <section class="section" style="padding-top:0">
+        <div class="container contact-layout">
+          <div data-reveal>
+            <p class="lede" style="margin-top:0">
+              International clients welcome. Projects billed in USD via Wise.
+            </p>
+            <p style="margin-top:16px">
+              Prefer email?
+              <button class="email-copy" type="button" data-copy-email="hello@lolikha.com" data-magnetic style="margin-left:8px">
+                <span>hello@lolikha.com</span>
+                <span class="copy-label">Copy</span>
+              </button>
+            </p>
+          </div>
+
+          <form class="contact-form" data-contact-form data-reveal novalidate>
+            <div class="field">
+              <label for="name">Name</label>
+              <input id="name" name="name" type="text" autocomplete="name" required placeholder="Your name" />
+            </div>
+            <div class="field">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" autocomplete="email" required placeholder="you@brand.com" />
+            </div>
+            <div class="field">
+              <label for="project-type">Project type</label>
+              <select id="project-type" name="projectType" required>
+                <option value="" disabled selected>Select one</option>
+                <option value="Website Design & Management">Website Design &amp; Management</option>
+                <option value="Video Editing & Production">Video Editing &amp; Production</option>
+                <option value="Social Media Management">Social Media Management</option>
+                <option value="Business & Executive Support">Business &amp; Executive Support</option>
+                <option value="Content & Design Production">Content &amp; Design Production</option>
+                <option value="A mix of services">A mix of services</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" required placeholder="Goals, timeline, links — whatever helps."></textarea>
+            </div>
+            <button class="btn btn-dark btn-slide" type="submit" data-magnetic>
+              <span class="btn-label"><span>Send message</span><span>Send message</span></span>
+            </button>
+            <p class="form-status" data-form-status role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </section>
+    </main>
+    <div data-footer></div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
   <script src="../js/partials.js"></script>
   <script src="../app.js"></script>
 </body>

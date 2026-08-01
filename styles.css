@@ -1,4 +1,4 @@
-/* Orionix — shared stylesheet */
+/* Lolikha — Orionix-inspired light creative studio */
 :root {
   --bg: #f9f8f6;
   --bg-soft: #f1efe9;
@@ -9,7 +9,9 @@
   --muted-2: #9a9a9a;
   --line: rgba(0, 0, 0, 0.08);
   --line-strong: rgba(0, 0, 0, 0.14);
-  --accent: #ff0000;
+  --accent: #1A2B4A;
+  --navy: #1A2B4A;
+  --navy-bright: #2A4570;
   --pill: #111111;
   --pill-hover: #2a2a2a;
   --radius-sm: 10px;
@@ -40,7 +42,7 @@ html {
 body {
   margin: 0;
   min-height: 100%;
-  background: var(--bg);
+  background: #ebe8e2;
   color: var(--ink);
   font-family: var(--font-sans);
   font-size: 16px;
@@ -270,15 +272,17 @@ p {
 }
 
 .logo-mark {
-  width: 28px;
-  height: 28px;
-  color: var(--accent);
+  width: 36px;
+  height: 36px;
   flex-shrink: 0;
+  display: grid;
+  place-items: center;
 }
 
-.logo-mark svg {
+.logo-mark img {
   width: 100%;
   height: 100%;
+  object-fit: contain;
   display: block;
 }
 
@@ -522,6 +526,8 @@ p {
 
 .hero-title .line {
   display: block;
+  overflow: hidden;
+  padding-bottom: 0.05em;
 }
 
 .hero-title em {
@@ -2001,4 +2007,243 @@ p {
 .stack-sm {
   display: grid;
   gap: 8px;
+}
+
+/* ——— Motion & interaction layer (Orionix / Framer feel) ——— */
+body {
+  opacity: 1;
+  transition: opacity 0.35s var(--ease), filter 0.35s var(--ease);
+}
+
+body.is-leaving {
+  opacity: 0;
+  filter: blur(4px);
+}
+
+.page-shell {
+  min-height: 100svh;
+  margin: 0.65rem;
+  border-radius: 28px;
+  overflow: clip;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.04);
+}
+
+body.has-cursor,
+body.has-cursor a,
+body.has-cursor button {
+  cursor: none;
+}
+
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 200;
+  width: 100%;
+  height: 2px;
+  pointer-events: none;
+}
+
+.scroll-progress > span {
+  display: block;
+  height: 100%;
+  width: 100%;
+  background: var(--navy);
+  transform: scaleX(0);
+  transform-origin: left center;
+}
+
+.cursor {
+  display: none;
+  position: fixed;
+  inset: 0 auto auto 0;
+  z-index: 9999;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+  mix-blend-mode: difference;
+}
+
+body.has-cursor .cursor {
+  display: block;
+}
+
+.cursor-dot,
+.cursor-ring {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.cursor-dot {
+  width: 7px;
+  height: 7px;
+  background: #fff;
+}
+
+.cursor-ring {
+  width: 34px;
+  height: 34px;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  transition: width 0.3s var(--ease), height 0.3s var(--ease), opacity 0.25s ease;
+}
+
+.cursor-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%) scale(0.7);
+  padding: 0.4rem 0.75rem;
+  border-radius: 999px;
+  background: #fff;
+  color: #000;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  opacity: 0;
+  mix-blend-mode: normal;
+  transition: opacity 0.25s ease, transform 0.3s var(--ease);
+}
+
+.cursor.is-hover .cursor-dot {
+  width: 0;
+  height: 0;
+}
+
+.cursor.is-hover .cursor-ring {
+  width: 58px;
+  height: 58px;
+}
+
+.cursor.is-label .cursor-ring {
+  opacity: 0;
+}
+
+.cursor.is-label .cursor-label {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.cursor.is-press .cursor-ring {
+  width: 26px;
+  height: 26px;
+}
+
+.btn-slide {
+  position: relative;
+  overflow: hidden;
+  padding-block: 0;
+}
+
+.btn-label {
+  display: grid;
+  overflow: hidden;
+  height: 48px;
+  place-items: center;
+}
+
+.btn-label span {
+  grid-area: 1 / 1;
+  display: inline-flex;
+  align-items: center;
+  height: 48px;
+  transition: transform 0.45s var(--ease);
+}
+
+.btn-label span:last-child {
+  transform: translateY(110%);
+}
+
+.btn-slide:hover .btn-label span:first-child {
+  transform: translateY(-110%);
+}
+
+.btn-slide:hover .btn-label span:last-child {
+  transform: translateY(0);
+}
+
+.hero-title .word {
+  display: inline-block;
+}
+
+.hero-underline {
+  display: block;
+  width: min(10ch, 70%);
+  height: 1px;
+  margin: 1rem auto 0;
+  background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.35), transparent);
+  transform-origin: center;
+}
+
+[data-reveal],
+[data-hero-fade] {
+  will-change: transform, opacity;
+}
+
+.ph-aef {
+  background: linear-gradient(145deg, #1a2b4a 0%, #2a4570 45%, #c5d0e0 100%);
+}
+.ph-cr {
+  background: linear-gradient(160deg, #0f172a 0%, #1e3a5f 40%, #94a3b8 100%);
+}
+.ph-piel {
+  background: linear-gradient(150deg, #f5f0e8 0%, #d4c4b0 40%, #1a2b4a 100%);
+}
+.ph-tv {
+  background: linear-gradient(140deg, #111111 0%, #1a2b4a 50%, #4a6fa5 100%);
+}
+.ph-yolo {
+  background: linear-gradient(155deg, #2a2035 0%, #1a2b4a 45%, #e8d5b5 100%);
+}
+
+@media (max-width: 820px) {
+  .page-shell {
+    margin: 0;
+    border-radius: 0;
+    border: 0;
+    box-shadow: none;
+  }
+
+  body.has-cursor .cursor {
+    display: none;
+  }
+
+  body.has-cursor,
+  body.has-cursor a,
+  body.has-cursor button {
+    cursor: auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.is-leaving {
+    opacity: 1;
+    filter: none;
+    transition: none;
+  }
+
+  .cursor {
+    display: none !important;
+  }
+
+  body.has-cursor,
+  body.has-cursor a,
+  body.has-cursor button {
+    cursor: auto;
+  }
+}
+
+@media (max-width: 800px) {
+  .about-split {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+.service-row {
+  cursor: default;
 }
