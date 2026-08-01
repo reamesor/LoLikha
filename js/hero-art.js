@@ -239,8 +239,8 @@
     gl.uniform1f(uTime, t);
     gl.uniform1f(uLiquid, liquid);
     gl.uniform1f(uCover, texAspect);
-    gl.uniform1f(uZoom, isNarrow() ? 1.15 : 1.42);
-    gl.uniform1f(uYBias, isNarrow() ? 0.02 : 0.06);
+    gl.uniform1f(uZoom, isNarrow() ? 1.22 : 1.55);
+    gl.uniform1f(uYBias, isNarrow() ? 0.04 : 0.1);
     gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
 
     const moving =

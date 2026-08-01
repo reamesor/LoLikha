@@ -41,7 +41,7 @@
           <div class="footer-brand">
             <a class="logo" href="${r("index.html")}" aria-label="Lolikha home">
               ${logo}
-              <span>Lolikha</span>
+              <span class="logo-word">Lolikha</span>
             </a>
             <p>Creative solutions that elevate your digital presence. Founder-led. International.</p>
           </div>
