@@ -4,29 +4,32 @@
 
   const logo = `
     <span class="logo-mark" aria-hidden="true">
-      <img src="${r("images/logo.png")}" alt="" width="36" height="36" />
+      <img src="${r("images/logo.png")}" alt="" width="40" height="40" />
     </span>`;
 
   const btnLabel = (text) =>
     `<span class="btn-label"><span>${text}</span><span>${text}</span></span>`;
+
+  const navLink = (href, label) =>
+    `<a class="nav-link" href="${href}" data-magnetic><span>${label}</span></a>`;
 
   const headerHTML = `
     <header class="site-header" data-site-header>
       <div class="header-inner">
         <a class="logo" href="${r("index.html")}" aria-label="Lolikha home" data-magnetic>
           ${logo}
-          <span>Lolikha</span>
+          <span class="logo-word">Lolikha</span>
         </a>
         <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
           <span class="nav-toggle-bars" aria-hidden="true"></span>
           <span class="visually-hidden">Menu</span>
         </button>
         <nav id="site-nav" class="site-nav" data-nav>
-          <a href="${r("works/index.html")}" data-magnetic>Works</a>
-          <a href="${r("about/index.html")}" data-magnetic>About</a>
-          <a href="${r("pricing/index.html")}" data-magnetic>Pricing</a>
-          <a href="${r("index.html")}#services" data-magnetic>Services</a>
-          <a class="btn btn-dark btn-slide" href="${r("contact/index.html")}" data-magnetic>${btnLabel("Book a call")}</a>
+          ${navLink(r("works/index.html"), "Works")}
+          ${navLink(r("about/index.html"), "About")}
+          ${navLink(r("pricing/index.html"), "Pricing")}
+          ${navLink(r("services/index.html"), "Services")}
+          <a class="btn btn-dark btn-slide header-cta" href="${r("contact/index.html")}" data-magnetic>${btnLabel("Book a call")}</a>
         </nav>
       </div>
     </header>`;
@@ -48,6 +51,7 @@
               <a href="${r("index.html")}">Home</a>
               <a href="${r("works/index.html")}">Works</a>
               <a href="${r("about/index.html")}">About</a>
+              <a href="${r("services/index.html")}">Services</a>
               <a href="${r("pricing/index.html")}">Pricing</a>
               <a href="${r("contact/index.html")}">Contact</a>
             </div>

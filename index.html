@@ -16,8 +16,6 @@
   <div class="scroll-progress" aria-hidden="true"><span data-progress></span></div>
   <div class="cursor" data-cursor aria-hidden="true">
     <div class="cursor-dot"></div>
-    <div class="cursor-ring"></div>
-    <div class="cursor-label" data-cursor-label></div>
   </div>
 
   <div class="page-shell">
@@ -26,8 +24,13 @@
     <main id="main">
       <section class="hero" aria-labelledby="hero-title" data-hero>
         <div class="hero-atmosphere" aria-hidden="true" data-hero-atmosphere>
+          <div class="hero-orb hero-orb--a"></div>
+          <div class="hero-orb hero-orb--b"></div>
+          <div class="hero-orb hero-orb--c"></div>
+          <div class="hero-geo" data-orb="0.02"></div>
           <div class="hero-art" data-hero-art></div>
           <div class="hero-art-fallback" data-orb="0.03"></div>
+          <div class="hero-veil"></div>
           <div class="hero-grain"></div>
         </div>
         <div class="container">
@@ -44,6 +47,7 @@
             <a class="btn btn-dark btn-slide" href="contact/index.html" data-magnetic>
               <span class="btn-label"><span>Book a call</span><span>Book a call</span></span>
             </a>
+            <a class="btn btn-ghost" href="works/index.html" data-magnetic>View works</a>
           </div>
         </div>
       </section>
@@ -67,49 +71,33 @@
         </div>
       </section>
 
-      <section class="section" aria-labelledby="work-title">
+      <section class="section home-teaser" aria-labelledby="work-title">
         <div class="container">
           <div class="section-head" data-reveal>
             <div>
               <p class="eyebrow">Featured work</p>
-              <h2 id="work-title">Selected projects built with ambitious brands</h2>
+              <h2 id="work-title">Selected elevations</h2>
             </div>
             <a class="btn btn-dark btn-slide" href="works/index.html" data-magnetic>
-              <span class="btn-label"><span>View works</span><span>View works</span></span>
+              <span class="btn-label"><span>All works</span><span>All works</span></span>
             </a>
           </div>
-          <div class="work-grid" data-reveal-stagger>
-            <a href="works/index.html#aef" class="work-card" data-cursor-text="View">
+          <div class="work-grid work-grid--teaser" data-reveal-stagger>
+            <a href="works/aef/" class="work-card">
               <div class="work-card-media">
                 <img src="images/works/rivermark.jpg" alt="AEF project visual" loading="lazy" />
               </div>
               <h3>AEF</h3>
-              <p>Ongoing short-form video production and website management &amp; polish.</p>
+              <p>Ongoing short-form video and website management &amp; polish.</p>
               <div class="tags"><span class="tag">Video</span><span class="tag">Website</span></div>
             </a>
-            <a href="works/index.html#piel" class="work-card" data-cursor-text="View">
+            <a href="works/piel/" class="work-card">
               <div class="work-card-media">
                 <img src="images/works/season.jpg" alt="Piel Skin Care project visual" loading="lazy" />
               </div>
               <h3>Piel Skin Care &amp; Body Spa</h3>
               <p>Social media management and promo campaign design.</p>
               <div class="tags"><span class="tag">Social</span><span class="tag">Content</span></div>
-            </a>
-            <a href="works/index.html#rivermark" class="work-card" data-cursor-text="View">
-              <div class="work-card-media">
-                <img src="images/works/axn.jpg" alt="Rivermark campaign visual" loading="lazy" />
-              </div>
-              <h3>Rivermark</h3>
-              <p>Bold street branding campaign designed to capture attention and energize urban audiences.</p>
-              <div class="tags"><span class="tag">Website</span><span class="tag">Social</span></div>
-            </a>
-            <a href="works/index.html#portx" class="work-card" data-cursor-text="View">
-              <div class="work-card-media">
-                <img src="images/works/portx.jpg" alt="Portx product interface" loading="lazy" />
-              </div>
-              <h3>Portx</h3>
-              <p>Product interface and digital system crafted for clarity, speed, and modern brand expression.</p>
-              <div class="tags"><span class="tag">UX/UI</span><span class="tag">Website</span></div>
             </a>
           </div>
         </div>
@@ -136,189 +124,56 @@
         </div>
       </section>
 
-      <section id="services" class="section" aria-labelledby="services-title" style="padding-top:0">
+      <section class="section home-teaser" aria-labelledby="services-title">
         <div class="container">
           <div class="section-head" data-reveal>
             <div>
               <p class="eyebrow">Services</p>
               <h2 id="services-title">Five ways we elevate</h2>
             </div>
+            <a class="btn btn-dark btn-slide" href="services/index.html" data-magnetic>
+              <span class="btn-label"><span>Explore services</span><span>Explore services</span></span>
+            </a>
           </div>
-          <div class="services-list" data-reveal-stagger>
-            <a class="service-row" href="services/website-design-management.html" data-cursor-text="Open">
-              <div class="service-num">01</div>
-              <div>
-                <h3>Website Design &amp; Management</h3>
-                <p>We build websites that feel premium, not templated.</p>
-                <div class="tags"><span class="tag">Custom Build</span><span class="tag">Design</span><span class="tag">Management</span></div>
-              </div>
-              <div class="service-arrow" aria-hidden="true">→</div>
+          <div class="home-service-teasers" data-reveal-stagger>
+            <a class="home-service-chip" href="services/website-design-management.html">
+              <span class="n">01</span>
+              <span>Website Design &amp; Management</span>
             </a>
-            <a class="service-row" href="services/video-editing-production.html" data-cursor-text="Open">
-              <div class="service-num">02</div>
-              <div>
-                <h3>Video Editing &amp; Production</h3>
-                <p>Footage becomes story, in Premiere Pro, from raw clips to final cut.</p>
-                <div class="tags"><span class="tag">Premiere Pro</span><span class="tag">Short-form</span><span class="tag">Long-form</span></div>
-              </div>
-              <div class="service-arrow" aria-hidden="true">→</div>
+            <a class="home-service-chip" href="services/video-editing-production.html">
+              <span class="n">02</span>
+              <span>Video Editing &amp; Production</span>
             </a>
-            <a class="service-row" href="services/social-media-management.html" data-cursor-text="Open">
-              <div class="service-num">03</div>
-              <div>
-                <h3>Social Media Management</h3>
-                <p>A brand’s presence, planned, produced, and managed, month after month.</p>
-                <div class="tags"><span class="tag">Strategy</span><span class="tag">Calendars</span><span class="tag">Publishing</span></div>
-              </div>
-              <div class="service-arrow" aria-hidden="true">→</div>
+            <a class="home-service-chip" href="services/social-media-management.html">
+              <span class="n">03</span>
+              <span>Social Media Management</span>
             </a>
-            <a class="service-row" href="services/business-executive-support.html" data-cursor-text="Open">
-              <div class="service-num">04</div>
-              <div>
-                <h3>Business &amp; Executive Support</h3>
-                <p>The operational side of a business, handled, not just tracked.</p>
-                <div class="tags"><span class="tag">VA</span><span class="tag">Workflows</span><span class="tag">SOPs</span></div>
-              </div>
-              <div class="service-arrow" aria-hidden="true">→</div>
+            <a class="home-service-chip" href="services/business-executive-support.html">
+              <span class="n">04</span>
+              <span>Business &amp; Executive Support</span>
             </a>
-            <a class="service-row" href="services/content-design-production.html" data-cursor-text="Open">
-              <div class="service-num">05</div>
-              <div>
-                <h3>Content &amp; Design Production</h3>
-                <p>Flyers, decks, and campaign assets, built from a reference, not a blank page.</p>
-                <div class="tags"><span class="tag">Flyers</span><span class="tag">Decks</span><span class="tag">Campaigns</span></div>
-              </div>
-              <div class="service-arrow" aria-hidden="true">→</div>
+            <a class="home-service-chip" href="services/content-design-production.html">
+              <span class="n">05</span>
+              <span>Content &amp; Design Production</span>
             </a>
           </div>
         </div>
       </section>
 
-      <section class="section" aria-labelledby="process-title">
-        <div class="container">
-          <div class="section-head" data-reveal>
-            <div>
-              <p class="eyebrow">How we work</p>
-              <h2 id="process-title">From complexity to clarity in 3 steps</h2>
-            </div>
-          </div>
-          <div class="process-grid" data-reveal-stagger>
-            <article class="process-card">
-              <img class="process-icon" src="images/art/process-1.png" alt="" width="56" height="56" loading="lazy" />
-              <div class="step">01 — Discovery</div>
-              <h3>Discovery</h3>
-              <p>We start by understanding the brand, audience, and goals behind the request.</p>
-            </article>
-            <article class="process-card">
-              <img class="process-icon" src="images/art/process-2.png" alt="" width="56" height="56" loading="lazy" />
-              <div class="step">02 — Direction</div>
-              <h3>Direction</h3>
-              <p>We decide what “elevated” looks like for this client specifically: visual direction, tone, and priority channels.</p>
-            </article>
-            <article class="process-card">
-              <img class="process-icon" src="images/art/process-3.png" alt="" width="56" height="56" loading="lazy" />
-              <div class="step">03 — Execution</div>
-              <h3>Execution</h3>
-              <p>We build and ship the work itself, whether that’s a website, a video, a content calendar, or a business system.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section id="pricing" class="section" aria-labelledby="pricing-title" style="padding-top:0">
-        <div class="container">
-          <div class="section-head" data-reveal>
-            <div>
-              <p class="eyebrow">Pricing</p>
-              <h2 id="pricing-title">Choose a plan that fits your needs</h2>
-            </div>
-            <a class="btn btn-dark btn-slide" href="pricing/index.html" data-magnetic>
-              <span class="btn-label"><span>Compare plans</span><span>Compare plans</span></span>
-            </a>
-          </div>
-          <div class="pricing-grid" data-reveal-stagger>
-            <article class="price-card">
-              <div class="plan-name">Launch</div>
-              <p class="plan-desc">A focused project to establish or refresh one clear piece of your digital presence.</p>
-              <div class="price-amount" style="font-size:clamp(28px,3.5vw,36px)">Rate on request</div>
-              <div class="price-unit">/ Project</div>
-              <ul class="price-features">
-                <li>Single-service scope</li>
-                <li>Website, video, or content package</li>
-                <li>Clear deliverables &amp; timeline</li>
-                <li>One revision round</li>
-                <li>Founder-led delivery</li>
-              </ul>
-              <a class="btn btn-dark btn-slide" href="contact/index.html" data-magnetic>
-                <span class="btn-label"><span>Inquire for Launch</span><span>Inquire for Launch</span></span>
-              </a>
-            </article>
-            <article class="price-card is-featured">
-              <div class="plan-name">Elevate</div>
-              <p class="plan-desc">A multi-service project for brands ready to raise web, content, and presence together.</p>
-              <div class="price-amount" style="font-size:clamp(28px,3.5vw,36px)">Rate on request</div>
-              <div class="price-unit">/ Project</div>
-              <ul class="price-features">
-                <li>Stacked services under one lead</li>
-                <li>Website + content or video mix</li>
-                <li>Direction locked before production</li>
-                <li>Priority revisions</li>
-                <li>Launch support through handoff</li>
-              </ul>
-              <a class="btn btn-dark btn-slide" href="contact/index.html" data-magnetic>
-                <span class="btn-label"><span>Inquire for Elevate</span><span>Inquire for Elevate</span></span>
-              </a>
-            </article>
-            <article class="price-card">
-              <div class="plan-name">Partner</div>
-              <p class="plan-desc">An ongoing creative and ops partnership for brands that need elevated work every month.</p>
-              <div class="price-amount" style="font-size:clamp(28px,3.5vw,36px)">Rate on request</div>
-              <div class="price-unit">/ Month</div>
-              <ul class="price-features">
-                <li>Social, content, or ops retainer</li>
-                <li>Monthly calendar &amp; priorities</li>
-                <li>Website or systems upkeep</li>
-                <li>Direct founder communication</li>
-                <li>Flexible scope each cycle</li>
-              </ul>
-              <a class="btn btn-dark btn-slide" href="contact/index.html" data-magnetic>
-                <span class="btn-label"><span>Inquire for Partner</span><span>Inquire for Partner</span></span>
-              </a>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section" aria-labelledby="faq-title">
-        <div class="container">
-          <div class="section-head" data-reveal>
-            <div>
-              <p class="eyebrow">FAQ</p>
-              <h2 id="faq-title">Questions? We’re here to help</h2>
-            </div>
-          </div>
-          <div class="faq-list" data-faq data-reveal>
-            <article class="faq-item">
-              <button class="faq-q" type="button"><span class="faq-num">01</span><span>What services does Lolikha provide?</span><span>+</span></button>
-              <div class="faq-a"><p>Website design &amp; management, video editing &amp; production, social media management, business &amp; executive support, and content &amp; design production — solo or stacked under one creative lead.</p></div>
-            </article>
-            <article class="faq-item">
-              <button class="faq-q" type="button"><span class="faq-num">02</span><span>How long does a typical project take?</span><span>+</span></button>
-              <div class="faq-a"><p>Depends on scope. Focused projects often land in a few weeks; multi-service builds take longer. Retainers run on monthly cycles. We’ll confirm a realistic timeline after discovery.</p></div>
-            </article>
-            <article class="faq-item">
-              <button class="faq-q" type="button"><span class="faq-num">03</span><span>What’s the process like?</span><span>+</span></button>
-              <div class="faq-a"><p>Discovery → Direction → Execution. We learn the brand and goals, lock what “elevated” looks like for you, then build and ship — website, video, calendar, or system.</p></div>
-            </article>
-            <article class="faq-item">
-              <button class="faq-q" type="button"><span class="faq-num">04</span><span>Can Lolikha take over an existing website or social presence?</span><span>+</span></button>
-              <div class="faq-a"><p>Yes. We regularly inherit existing websites and social channels, audit what’s working, clean what isn’t, and elevate from there — without forcing a full rebuild unless you need one.</p></div>
-            </article>
-            <article class="faq-item">
-              <button class="faq-q" type="button"><span class="faq-num">05</span><span>Do you offer ongoing support after launch?</span><span>+</span></button>
-              <div class="faq-a"><p>Yes. Partner retainers cover ongoing social, content, website management, and business support. Project work can also include a defined post-launch window — ask on the call.</p></div>
-            </article>
-          </div>
+      <section class="section home-split-teasers" aria-label="Studio highlights">
+        <div class="container home-split-grid" data-reveal-stagger>
+          <a class="home-panel" href="about/index.html">
+            <p class="eyebrow">About</p>
+            <h2 class="serif">Founder-led. Built to elevate.</h2>
+            <p>Meet Maerianne (“Sor”) — the creative eye behind every Lolikha engagement.</p>
+            <span class="home-panel-link">Read the story →</span>
+          </a>
+          <a class="home-panel" href="pricing/index.html">
+            <p class="eyebrow">Pricing</p>
+            <h2 class="serif">Launch. Elevate. Partner.</h2>
+            <p>Three clear plans — rates on request after discovery. No invented price tags.</p>
+            <span class="home-panel-link">View plans →</span>
+          </a>
         </div>
       </section>
 

@@ -29,9 +29,9 @@
   const showImageFallback = () => {
     root.classList.add("is-fallback");
     root.style.backgroundImage = `url("${textureUrl}")`;
-    root.style.backgroundSize = "contain";
+    root.style.backgroundSize = "cover";
     root.style.backgroundRepeat = "no-repeat";
-    root.style.backgroundPosition = "center 60%";
+    root.style.backgroundPosition = "center 42%";
     root.classList.add("is-ready");
     canvas.remove();
   };
@@ -61,6 +61,8 @@
     uniform float uTime;
     uniform float uLiquid;
     uniform float uCover;
+    uniform float uZoom;
+    uniform float uYBias;
 
     float hash(vec2 p) {
       return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453123);
@@ -79,7 +81,7 @@
 
     void main() {
       vec2 uv = vUv;
-      /* cover-fit texture into canvas */
+      /* Cover-fit + zoom so glass fills more of the hero */
       float canvasAspect = uRes.x / max(uRes.y, 1.0);
       float texAspect = uCover;
       vec2 tuv = uv;
@@ -90,6 +92,8 @@
         float w = canvasAspect / texAspect;
         tuv.x = (uv.x - 0.5) * w + 0.5;
       }
+      tuv = (tuv - 0.5) / max(uZoom, 0.01) + 0.5;
+      tuv.y += uYBias;
 
       vec2 m = uMouse;
       float dist = distance(uv, m);
@@ -110,10 +114,11 @@
       vec4 cB = texture2D(uTex, uvB);
       vec4 col = vec4(cR.r, cG.g, cB.b, cG.a);
 
-      /* Soft edge fade */
-      float edge = smoothstep(0.0, 0.04, tuv.x) * smoothstep(1.0, 0.96, tuv.x)
-                 * smoothstep(0.0, 0.06, tuv.y) * smoothstep(1.0, 0.9, tuv.y);
-      col.a *= edge * (0.92 + influence * 0.08);
+      /* Soft edge fade — keep type readable near center-top */
+      float edge = smoothstep(0.0, 0.05, tuv.x) * smoothstep(1.0, 0.95, tuv.x)
+                 * smoothstep(0.0, 0.08, tuv.y) * smoothstep(1.0, 0.88, tuv.y);
+      float centerSoft = 1.0 - smoothstep(0.22, 0.62, distance(uv, vec2(0.5, 0.28))) * 0.22;
+      col.a *= edge * centerSoft * (0.94 + influence * 0.06);
 
       /* Outside texture bounds */
       if (tuv.x < 0.0 || tuv.x > 1.0 || tuv.y < 0.0 || tuv.y > 1.0) {
@@ -167,6 +172,8 @@
   const uTime = gl.getUniformLocation(program, "uTime");
   const uLiquid = gl.getUniformLocation(program, "uLiquid");
   const uCover = gl.getUniformLocation(program, "uCover");
+  const uZoom = gl.getUniformLocation(program, "uZoom");
+  const uYBias = gl.getUniformLocation(program, "uYBias");
 
   gl.enable(gl.BLEND);
   gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);
@@ -193,7 +200,7 @@
   img.onerror = () => showImageFallback();
   img.src = textureUrl;
 
-  const mouse = { x: 0.5, y: 0.55, tx: 0.5, ty: 0.55 };
+  const mouse = { x: 0.5, y: 0.48, tx: 0.5, ty: 0.48 };
   const vel = { x: 0, y: 0 };
   let raf = 0;
   const start = performance.now();
@@ -232,6 +239,8 @@
     gl.uniform1f(uTime, t);
     gl.uniform1f(uLiquid, liquid);
     gl.uniform1f(uCover, texAspect);
+    gl.uniform1f(uZoom, isNarrow() ? 1.15 : 1.42);
+    gl.uniform1f(uYBias, isNarrow() ? 0.02 : 0.06);
     gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
 
     const moving =
@@ -270,7 +279,7 @@
       "pointerleave",
       () => {
         mouse.tx = 0.5;
-        mouse.ty = 0.55;
+        mouse.ty = 0.48;
         kick();
       },
       { passive: true }

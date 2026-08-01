@@ -42,85 +42,22 @@
   if (lenis) lenis.on("scroll", onScrollUI);
   else window.addEventListener("scroll", onScrollUI, { passive: true });
 
-  /* Custom cursor — dot/label 1:1 with pointer; ring lightly lagged */
+  /* Custom cursor — single colorful dot, 1:1 with pointer (desktop only) */
   const cursor = document.querySelector("[data-cursor]");
-  const cursorLabel = document.querySelector("[data-cursor-label]");
-  if (cursor && finePointer && canHover && !reduceMotion) {
+  if (cursor && finePointer && canHover) {
     document.body.classList.add("has-cursor");
-    const pos = { x: -100, y: -100 };
-    const ring = { x: pos.x, y: pos.y };
     const dot = cursor.querySelector(".cursor-dot");
-    const ringEl = cursor.querySelector(".cursor-ring");
-    let ringRaf = 0;
-    let ringActive = false;
-
-    const placeInstant = (x, y) => {
-      const t = `translate3d(${x}px, ${y}px, 0) translate(-50%, -50%)`;
-      if (dot) dot.style.transform = t;
-      if (cursorLabel) cursorLabel.style.transform = t;
-    };
-
-    const tickRing = () => {
-      ring.x += (pos.x - ring.x) * 0.42;
-      ring.y += (pos.y - ring.y) * 0.42;
-      if (ringEl) {
-        ringEl.style.transform = `translate3d(${ring.x}px, ${ring.y}px, 0) translate(-50%, -50%)`;
-      }
-      const dx = Math.abs(pos.x - ring.x);
-      const dy = Math.abs(pos.y - ring.y);
-      if (dx > 0.05 || dy > 0.05) {
-        ringRaf = requestAnimationFrame(tickRing);
-      } else {
-        ringActive = false;
-        ringRaf = 0;
-        if (ringEl) {
-          ringEl.style.transform = `translate3d(${pos.x}px, ${pos.y}px, 0) translate(-50%, -50%)`;
-        }
-      }
-    };
-
-    const kickRing = () => {
-      if (!ringActive) {
-        ringActive = true;
-        ringRaf = requestAnimationFrame(tickRing);
-      }
-    };
-
     window.addEventListener(
       "pointermove",
       (event) => {
         if (event.pointerType && event.pointerType !== "mouse") return;
-        pos.x = event.clientX;
-        pos.y = event.clientY;
-        placeInstant(pos.x, pos.y);
-        kickRing();
+        if (!dot) return;
+        dot.style.transform = `translate3d(${event.clientX}px, ${event.clientY}px, 0) translate(-50%, -50%)`;
+        cursor.classList.remove("is-hidden");
       },
       { passive: true }
     );
-
-    document.querySelectorAll("[data-cursor-text], a, button, .work-card, .service-row").forEach((el) => {
-      el.addEventListener("pointerenter", () => {
-        cursor.classList.add("is-hover");
-        const label = el.getAttribute("data-cursor-text");
-        if (label && cursorLabel) {
-          cursorLabel.textContent = label;
-          cursor.classList.add("is-label");
-        }
-      });
-      el.addEventListener("pointerleave", () => {
-        cursor.classList.remove("is-hover", "is-label");
-        if (cursorLabel) cursorLabel.textContent = "";
-      });
-    });
-
-    window.addEventListener("pointerdown", () => cursor.classList.add("is-press"));
-    window.addEventListener("pointerup", () => cursor.classList.remove("is-press"));
-    window.addEventListener("pointerleave", () => {
-      cursor.classList.add("is-hidden");
-      if (ringRaf) cancelAnimationFrame(ringRaf);
-      ringActive = false;
-      ringRaf = 0;
-    });
+    window.addEventListener("pointerleave", () => cursor.classList.add("is-hidden"));
     window.addEventListener("pointerenter", () => cursor.classList.remove("is-hidden"));
   }
 
