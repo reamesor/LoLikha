@@ -234,10 +234,16 @@
     gsap.registerPlugin(ScrollTrigger);
 
     const tl = gsap.timeline({ defaults: { ease: "power4.out" } });
-    tl.from("[data-hero-word]", { yPercent: 110, duration: 1.15, stagger: 0.1 }, 0.05)
+    // Rise + fade (no overflow mask) so serif descenders never clip
+    tl.from("[data-hero-word]", {
+      y: 56,
+      opacity: 0,
+      duration: 1.15,
+      stagger: 0.1,
+      clearProps: "transform,opacity",
+    }, 0.05)
       .from(".hero-underline", { scaleX: 0, duration: 0.85 }, 0.5)
-      .from("[data-hero-fade]", { y: 28, opacity: 0, duration: 0.85, stagger: 0.1 }, 0.45)
-      .from(".hero-atmosphere", { opacity: 0, duration: 1.2, ease: "power2.out" }, 0);
+      .from("[data-hero-fade]", { y: 28, opacity: 0, duration: 0.85, stagger: 0.1 }, 0.45);
 
     gsap.utils.toArray("[data-reveal]").forEach((el) => {
       gsap.from(el, {

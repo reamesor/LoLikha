@@ -26,20 +26,15 @@
     <main id="main">
       <section class="hero" aria-labelledby="hero-title" data-hero>
         <div class="hero-atmosphere" aria-hidden="true" data-hero-atmosphere>
-          <div class="hero-orb hero-orb--a" data-orb="0.04"></div>
-          <div class="hero-orb hero-orb--b" data-orb="0.07"></div>
-          <div class="hero-orb hero-orb--c" data-orb="0.03"></div>
-          <div class="hero-geo" data-orb="0.02">
-            <span class="hero-geo-arc"></span>
-            <span class="hero-geo-line"></span>
-          </div>
+          <div class="hero-art" data-hero-art></div>
+          <div class="hero-art-fallback" data-orb="0.03"></div>
           <div class="hero-grain"></div>
         </div>
         <div class="container">
           <p class="eyebrow" data-hero-fade>Lolikha</p>
           <h1 class="hero-title" id="hero-title">
-            <span class="line"><span class="word" data-hero-word>Everything,</span></span>
-            <span class="line"><span class="word" data-hero-word"><em>elevated.</em></span></span>
+            <span class="hero-title-row" data-hero-word>Everything,</span>
+            <span class="hero-title-row hero-title-row--accent" data-hero-word><em>elevated.</em></span>
           </h1>
           <span class="hero-underline" aria-hidden="true"></span>
           <p class="hero-lede" data-hero-fade>
@@ -61,15 +56,13 @@
         <div class="marquee" aria-hidden="true">
           <div class="marquee-track marquee-track--slow">
             <div class="client-logo"><span>AEF</span></div>
-            <div class="client-logo"><span>CR Group / Chobe</span></div>
             <div class="client-logo"><span>Piel Skin Care &amp; Body Spa</span></div>
-            <div class="client-logo"><span>Tiny Vikings</span></div>
-            <div class="client-logo"><span>Yolo Studio</span></div>
             <div class="client-logo"><span>AEF</span></div>
-            <div class="client-logo"><span>CR Group / Chobe</span></div>
             <div class="client-logo"><span>Piel Skin Care &amp; Body Spa</span></div>
-            <div class="client-logo"><span>Tiny Vikings</span></div>
-            <div class="client-logo"><span>Yolo Studio</span></div>
+            <div class="client-logo"><span>AEF</span></div>
+            <div class="client-logo"><span>Piel Skin Care &amp; Body Spa</span></div>
+            <div class="client-logo"><span>AEF</span></div>
+            <div class="client-logo"><span>Piel Skin Care &amp; Body Spa</span></div>
           </div>
         </div>
       </section>
@@ -87,35 +80,58 @@
           </div>
           <div class="work-grid" data-reveal-stagger>
             <a href="works/index.html#aef" class="work-card" data-cursor-text="View">
-              <div class="work-card-media"><div class="ph ph-aef" aria-hidden="true"></div></div>
+              <div class="work-card-media">
+                <img src="images/works/rivermark.jpg" alt="AEF project visual" loading="lazy" />
+              </div>
               <h3>AEF</h3>
-              <p>Ongoing short-form video production and Elementor website management.</p>
+              <p>Ongoing short-form video production and website management &amp; polish.</p>
               <div class="tags"><span class="tag">Video</span><span class="tag">Website</span></div>
             </a>
-            <a href="works/index.html#cr-group" class="work-card" data-cursor-text="View">
-              <div class="work-card-media"><div class="ph ph-cr" aria-hidden="true"></div></div>
-              <h3>CR Group / Chobe</h3>
-              <p>Cryptocurrency exchange tutorial videos and pitch deck design.</p>
-              <div class="tags"><span class="tag">Video</span><span class="tag">Design</span></div>
-            </a>
             <a href="works/index.html#piel" class="work-card" data-cursor-text="View">
-              <div class="work-card-media"><div class="ph ph-piel" aria-hidden="true"></div></div>
+              <div class="work-card-media">
+                <img src="images/works/season.jpg" alt="Piel Skin Care project visual" loading="lazy" />
+              </div>
               <h3>Piel Skin Care &amp; Body Spa</h3>
               <p>Social media management and promo campaign design.</p>
               <div class="tags"><span class="tag">Social</span><span class="tag">Content</span></div>
             </a>
-            <a href="works/index.html#tiny-vikings" class="work-card" data-cursor-text="View">
-              <div class="work-card-media"><div class="ph ph-tv" aria-hidden="true"></div></div>
-              <h3>Tiny Vikings</h3>
-              <p>Discord community revamp and onboarding docs.</p>
-              <div class="tags"><span class="tag">Community</span><span class="tag">Support</span></div>
+            <a href="works/index.html#rivermark" class="work-card" data-cursor-text="View">
+              <div class="work-card-media">
+                <img src="images/works/axn.jpg" alt="Rivermark campaign visual" loading="lazy" />
+              </div>
+              <h3>Rivermark</h3>
+              <p>Bold street branding campaign designed to capture attention and energize urban audiences.</p>
+              <div class="tags"><span class="tag">Website</span><span class="tag">Social</span></div>
             </a>
-            <a href="works/index.html#yolo" class="work-card" data-cursor-text="View">
-              <div class="work-card-media"><div class="ph ph-yolo" aria-hidden="true"></div></div>
-              <h3>Yolo Studio</h3>
-              <p>Booking and workflow system build.</p>
-              <div class="tags"><span class="tag">Systems</span><span class="tag">Support</span></div>
+            <a href="works/index.html#portx" class="work-card" data-cursor-text="View">
+              <div class="work-card-media">
+                <img src="images/works/portx.jpg" alt="Portx product interface" loading="lazy" />
+              </div>
+              <h3>Portx</h3>
+              <p>Product interface and digital system crafted for clarity, speed, and modern brand expression.</p>
+              <div class="tags"><span class="tag">UX/UI</span><span class="tag">Website</span></div>
             </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="reel-band" aria-label="Watch our reel">
+        <div class="reel-stage" data-reveal>
+          <video class="reel-video" autoplay muted loop playsinline poster="images/art/reel-reflection.png">
+            <source src="images/art/reel-a.mp4" type="video/mp4" />
+          </video>
+          <div class="reel-caption">Watch our reel</div>
+        </div>
+        <div class="marquee" aria-hidden="true">
+          <div class="marquee-track">
+            <div class="reel-item">Watch our reel ·</div>
+            <div class="reel-item">Watch our reel ·</div>
+            <div class="reel-item">Watch our reel ·</div>
+            <div class="reel-item">Watch our reel ·</div>
+            <div class="reel-item">Watch our reel ·</div>
+            <div class="reel-item">Watch our reel ·</div>
+            <div class="reel-item">Watch our reel ·</div>
+            <div class="reel-item">Watch our reel ·</div>
           </div>
         </div>
       </section>
@@ -134,7 +150,7 @@
               <div>
                 <h3>Website Design &amp; Management</h3>
                 <p>We build websites that feel premium, not templated.</p>
-                <div class="tags"><span class="tag">Elementor</span><span class="tag">WordPress</span><span class="tag">Management</span></div>
+                <div class="tags"><span class="tag">Custom Build</span><span class="tag">Design</span><span class="tag">Management</span></div>
               </div>
               <div class="service-arrow" aria-hidden="true">→</div>
             </a>
@@ -188,16 +204,19 @@
           </div>
           <div class="process-grid" data-reveal-stagger>
             <article class="process-card">
+              <img class="process-icon" src="images/art/process-1.png" alt="" width="56" height="56" loading="lazy" />
               <div class="step">01 — Discovery</div>
               <h3>Discovery</h3>
               <p>We start by understanding the brand, audience, and goals behind the request.</p>
             </article>
             <article class="process-card">
+              <img class="process-icon" src="images/art/process-2.png" alt="" width="56" height="56" loading="lazy" />
               <div class="step">02 — Direction</div>
               <h3>Direction</h3>
               <p>We decide what “elevated” looks like for this client specifically: visual direction, tone, and priority channels.</p>
             </article>
             <article class="process-card">
+              <img class="process-icon" src="images/art/process-3.png" alt="" width="56" height="56" loading="lazy" />
               <div class="step">03 — Execution</div>
               <h3>Execution</h3>
               <p>We build and ship the work itself, whether that’s a website, a video, a content calendar, or a business system.</p>
@@ -293,7 +312,7 @@
             </article>
             <article class="faq-item">
               <button class="faq-q" type="button"><span class="faq-num">04</span><span>Can Lolikha take over an existing website or social presence?</span><span>+</span></button>
-              <div class="faq-a"><p>Yes. We regularly inherit Elementor/WordPress sites and social channels, audit what’s working, clean what isn’t, and elevate from there — without forcing a full rebuild unless you need one.</p></div>
+              <div class="faq-a"><p>Yes. We regularly inherit existing websites and social channels, audit what’s working, clean what isn’t, and elevate from there — without forcing a full rebuild unless you need one.</p></div>
             </article>
             <article class="faq-item">
               <button class="faq-q" type="button"><span class="faq-num">05</span><span>Do you offer ongoing support after launch?</span><span>+</span></button>
@@ -321,6 +340,7 @@
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
   <script src="js/partials.js"></script>
+  <script src="js/hero-art.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

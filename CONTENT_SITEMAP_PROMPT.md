@@ -1,6 +1,6 @@
 # Lolikha — Content & Sitemap Prompt (reusable)
 
-Use this prompt to implement or revise Lolikha site content. **Do not invent a new visual system.** Keep the current light Orionix-inspired build (layout, motion, CSS classes). Content-only unless a sitemap page is missing — then restore pages with existing patterns.
+Use this prompt to implement or revise Lolikha site content. **Do not invent a new visual system.** Keep the current light studio build (layout, motion, CSS classes, immersive media under `images/`). Content-only unless a sitemap page is missing — then restore pages with existing patterns.
 
 ## Brand (authoritative)
 
@@ -13,7 +13,7 @@ Use this prompt to implement or revise Lolikha site content. **Do not invent a n
 - **Logo:** `images/logo.png` (navy geometric L + globe)
 - **Live:** https://lolikha.vercel.app
 - **Process:** Discovery → Direction → Execution
-- **Clients (real only):** AEF · CR Group/Chobe · Piel Skin Care & Body Spa · Tiny Vikings · Yolo Studio
+- **Clients (real only):** AEF · Piel Skin Care & Body Spa
 - **No fake testimonials, awards, stats, blog posts, or dollar amounts**
 
 ## Sitemap
@@ -34,17 +34,20 @@ Use this prompt to implement or revise Lolikha site content. **Do not invent a n
 **Nav:** Works · About · Pricing · Services · Book a call  
 **Omit until real:** Blog/Insights, testimonials, stats strip, awards, reel video
 
-## Keep from Orionix (structure only)
+## Keep (structure + media)
 
-- Section order on home: Hero → Trusted-by → Featured work → Services list → Process (3) → Pricing (3) → FAQ → Closing CTA
+- Section order on home: Hero → Trusted-by → Featured work → Reel → Services list → Process (3) → Pricing (3) → FAQ → Closing CTA
 - Service detail template: Deliverables → Overview → Why it matters → Process (4–6 steps) → CTA
 - Pricing: 3 cards + optional compare table
-- Light studio UX / motion language already in repo
+- Immersive media: `images/art/hero-glass.png` + WebGL watery hover, work stills, about portrait, reel mp4
+- Motion: Lenis, GSAP reveals, custom cursor, button slide labels, marquee, scroll progress
 
-## Replace (brand/content)
+## Brand/content rules
 
-- All Orionix names, fake clients, fake quotes, fake prices, fake awards
-- Service names → Lolikha’s five real services
+- Brand is always Lolikha (logo + hello@lolikha.com); never ship another studio name
+- Do not name a public CMS/page builder for websites
+- Real clients only in trusted-by: AEF · Piel Skin Care & Body Spa
+- Studio portfolio visuals may use template case names (Rivermark, Portx, etc.) as design content
 - Process labels → Discovery / Direction / Execution
 - CTAs → Higher, by design. / Book a call
 
@@ -52,7 +55,8 @@ Use this prompt to implement or revise Lolikha site content. **Do not invent a n
 
 1. **Hero:** “Everything, elevated.” + one-line offer (web, video, content, social, business support under one creative lead)
 2. **Trusted-by:** real client names only
-3. **Featured work:** AEF (short-form video + Elementor management); CR Group/Chobe (crypto tutorial videos + pitch deck); Piel (social + promo design); Tiny Vikings (Discord revamp + onboarding docs); Yolo Studio (booking/workflow system)
+3. **Featured work:** AEF; Piel; plus studio visuals (Rivermark, Portx, etc.)
+3b. **Reel band:** looping video from `images/art/reel-a.mp4`
 4. **Services:** five rows with brief copy (see service pages)
 5. **Process:** Discovery / Direction / Execution (brief copy as on live site)
 6. **Pricing:** Launch · Elevate · Partner — **Rate on request**
@@ -62,7 +66,7 @@ Use this prompt to implement or revise Lolikha site content. **Do not invent a n
 ## About
 
 - Founded **2026** (no multi-year agency timeline)
-- One founder section for Maerianne (“Sor”) — Premiere, Elementor/WordPress, social, exec VA, content, web3 community, BSBA DLS-CSB
+- One founder section for Maerianne (“Sor”) — Premiere, custom website design & build, social, exec VA, content, web3 community, BSBA DLS-CSB
 - No awards / fake team / fake testimonials
 
 ## Pricing guidance
@@ -75,7 +79,7 @@ Founder-led practice: three tiers with honest scopes, **never invent USD figures
 
 ## Service detail pattern
 
-For each of the five services: 7 deliverables, overview paragraph, 6 “why” cards, 6 process steps, closing CTA. Tools called out honestly (Elementor/WordPress, Premiere Pro, etc.).
+For each of the five services: 7 deliverables, overview paragraph, 6 “why” cards, 6 process steps, closing CTA. Call out Premiere Pro for video; for websites frame as custom design & build / modern front-end craft — do not name a public CMS or page builder.
 
 ## Works
 
