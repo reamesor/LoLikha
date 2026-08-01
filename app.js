@@ -1,14 +1,19 @@
 (() => {
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const finePointer = window.matchMedia("(pointer: fine)").matches;
+  const canHover = window.matchMedia("(hover: hover)").matches;
 
+  /* Lenis: short lerp settle so scroll stops with the user — never idle-drift */
   let lenis;
   if (!reduceMotion && window.Lenis) {
+    document.documentElement.classList.add("has-smooth-scroll");
     lenis = new window.Lenis({
-      duration: 1.15,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      lerp: 0.14,
+      wheelMultiplier: 0.85,
+      touchMultiplier: 1.2,
       smoothWheel: true,
-      touchMultiplier: 1.4,
+      syncTouch: false,
+      autoRaf: false,
     });
     const raf = (time) => {
       lenis.raf(time);
@@ -37,36 +42,61 @@
   if (lenis) lenis.on("scroll", onScrollUI);
   else window.addEventListener("scroll", onScrollUI, { passive: true });
 
-  /* Custom cursor */
+  /* Custom cursor — dot/label 1:1 with pointer; ring lightly lagged */
   const cursor = document.querySelector("[data-cursor]");
   const cursorLabel = document.querySelector("[data-cursor-label]");
-  if (cursor && finePointer && !reduceMotion) {
+  if (cursor && finePointer && canHover && !reduceMotion) {
     document.body.classList.add("has-cursor");
-    const pos = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
+    const pos = { x: -100, y: -100 };
     const ring = { x: pos.x, y: pos.y };
     const dot = cursor.querySelector(".cursor-dot");
     const ringEl = cursor.querySelector(".cursor-ring");
+    let ringRaf = 0;
+    let ringActive = false;
+
+    const placeInstant = (x, y) => {
+      const t = `translate3d(${x}px, ${y}px, 0) translate(-50%, -50%)`;
+      if (dot) dot.style.transform = t;
+      if (cursorLabel) cursorLabel.style.transform = t;
+    };
+
+    const tickRing = () => {
+      ring.x += (pos.x - ring.x) * 0.42;
+      ring.y += (pos.y - ring.y) * 0.42;
+      if (ringEl) {
+        ringEl.style.transform = `translate3d(${ring.x}px, ${ring.y}px, 0) translate(-50%, -50%)`;
+      }
+      const dx = Math.abs(pos.x - ring.x);
+      const dy = Math.abs(pos.y - ring.y);
+      if (dx > 0.05 || dy > 0.05) {
+        ringRaf = requestAnimationFrame(tickRing);
+      } else {
+        ringActive = false;
+        ringRaf = 0;
+        if (ringEl) {
+          ringEl.style.transform = `translate3d(${pos.x}px, ${pos.y}px, 0) translate(-50%, -50%)`;
+        }
+      }
+    };
+
+    const kickRing = () => {
+      if (!ringActive) {
+        ringActive = true;
+        ringRaf = requestAnimationFrame(tickRing);
+      }
+    };
 
     window.addEventListener(
       "pointermove",
       (event) => {
+        if (event.pointerType && event.pointerType !== "mouse") return;
         pos.x = event.clientX;
         pos.y = event.clientY;
-        if (dot) dot.style.transform = `translate(${pos.x}px, ${pos.y}px) translate(-50%, -50%)`;
-        if (cursorLabel) {
-          cursorLabel.style.transform = `translate(${pos.x}px, ${pos.y}px) translate(-50%, -50%)`;
-        }
+        placeInstant(pos.x, pos.y);
+        kickRing();
       },
       { passive: true }
     );
-
-    const tickCursor = () => {
-      ring.x += (pos.x - ring.x) * 0.16;
-      ring.y += (pos.y - ring.y) * 0.16;
-      if (ringEl) ringEl.style.transform = `translate(${ring.x}px, ${ring.y}px) translate(-50%, -50%)`;
-      requestAnimationFrame(tickCursor);
-    };
-    requestAnimationFrame(tickCursor);
 
     document.querySelectorAll("[data-cursor-text], a, button, .work-card, .service-row").forEach((el) => {
       el.addEventListener("pointerenter", () => {
@@ -85,6 +115,13 @@
 
     window.addEventListener("pointerdown", () => cursor.classList.add("is-press"));
     window.addEventListener("pointerup", () => cursor.classList.remove("is-press"));
+    window.addEventListener("pointerleave", () => {
+      cursor.classList.add("is-hidden");
+      if (ringRaf) cancelAnimationFrame(ringRaf);
+      ringActive = false;
+      ringRaf = 0;
+    });
+    window.addEventListener("pointerenter", () => cursor.classList.remove("is-hidden"));
   }
 
   /* Mobile nav */
@@ -186,7 +223,7 @@
     });
   });
 
-  /* GSAP motion */
+  /* GSAP motion — scroll/hover driven only; no idle page transforms */
   const gsap = window.gsap;
   const ScrollTrigger = window.ScrollTrigger;
   if (gsap && ScrollTrigger && !reduceMotion) {
@@ -203,7 +240,7 @@
         opacity: 0,
         duration: 1,
         ease: "power3.out",
-        scrollTrigger: { trigger: el, start: "top 88%" },
+        scrollTrigger: { trigger: el, start: "top 88%", once: true },
       });
     });
 
@@ -214,17 +251,9 @@
         duration: 0.9,
         stagger: 0.08,
         ease: "power3.out",
-        scrollTrigger: { trigger: group, start: "top 86%" },
+        scrollTrigger: { trigger: group, start: "top 86%", once: true },
       });
     });
-
-    const marquee = document.querySelector(".marquee-track");
-    if (marquee && lenis) {
-      lenis.on("scroll", ({ velocity }) => {
-        const speed = 1 + Math.min(2, Math.abs(velocity) * 0.08);
-        marquee.style.animationDuration = `${40 / speed}s`;
-      });
-    }
   } else {
     document.querySelectorAll("[data-reveal], [data-hero-fade], [data-hero-word]").forEach((el) => {
       el.style.opacity = "1";
@@ -233,13 +262,14 @@
   }
 
   /* Magnetic buttons */
-  if (!reduceMotion && finePointer) {
+  if (!reduceMotion && finePointer && canHover) {
     document.querySelectorAll("[data-magnetic]").forEach((item) => {
       item.addEventListener("pointermove", (event) => {
+        if (event.pointerType && event.pointerType !== "mouse") return;
         const rect = item.getBoundingClientRect();
         const x = event.clientX - rect.left - rect.width / 2;
         const y = event.clientY - rect.top - rect.height / 2;
-        item.style.transform = `translate(${x * 0.18}px, ${y * 0.22}px)`;
+        item.style.transform = `translate3d(${x * 0.18}px, ${y * 0.22}px, 0)`;
       });
       item.addEventListener("pointerleave", () => {
         item.style.transform = "";
