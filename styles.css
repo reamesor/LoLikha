@@ -687,31 +687,24 @@ p {
 .hero-art {
   position: absolute;
   left: 50%;
-  top: 78%;
-  width: min(2000px, 128%);
-  height: min(780px, 74vw);
-  translate: -50% -28%;
+  top: 42%;
+  width: min(2100px, 136%);
+  height: min(900px, 86vw);
+  translate: -50% -42%;
   opacity: 0;
   transition: opacity 1.1s var(--ease);
   z-index: 1;
   pointer-events: none;
-  /* Glass peeks below/around copy — hard fade through the type block */
-  mask-image:
-    radial-gradient(ellipse 90% 55% at 50% 82%, #000 14%, transparent 72%),
-    linear-gradient(180deg, transparent 0%, transparent 28%, rgba(0, 0, 0, 0.55) 52%, #000 78%, #000 100%);
-  -webkit-mask-image:
-    radial-gradient(ellipse 90% 55% at 50% 82%, #000 14%, transparent 72%),
-    linear-gradient(180deg, transparent 0%, transparent 28%, rgba(0, 0, 0, 0.55) 52%, #000 78%, #000 100%);
-  mask-composite: intersect;
-  -webkit-mask-composite: source-in;
+  mask-image: radial-gradient(ellipse 82% 72% at 50% 46%, #000 28%, transparent 80%);
+  -webkit-mask-image: radial-gradient(ellipse 82% 72% at 50% 46%, #000 28%, transparent 80%);
 }
 
 .hero-art.is-ready {
-  opacity: 0.7;
+  opacity: 1;
 }
 
 .hero-art.is-fallback {
-  opacity: 0.58;
+  opacity: 0.95;
 }
 
 .hero-art-canvas {
@@ -723,12 +716,12 @@ p {
 .hero-art-fallback {
   position: absolute;
   left: 50%;
-  top: 80%;
+  top: 44%;
   width: min(92vw, 980px);
-  height: min(54vw, 480px);
-  translate: -50% -24%;
+  height: min(62vw, 560px);
+  translate: -50% -44%;
   pointer-events: none;
-  opacity: 0.5;
+  opacity: 0.9;
   z-index: 1;
   background:
     radial-gradient(circle at 18% 48%, rgba(120, 80, 200, 0.3) 0 4%, transparent 5.2%),
@@ -738,8 +731,6 @@ p {
     radial-gradient(circle at 80% 44%, rgba(220, 150, 90, 0.22) 0 4.5%, transparent 5.8%),
     radial-gradient(ellipse 60% 40% at 50% 52%, rgba(100, 90, 180, 0.16), transparent 70%);
   filter: blur(18px) saturate(1.15);
-  mask-image: radial-gradient(ellipse 74% 50% at 50% 76%, #000 18%, transparent 74%);
-  -webkit-mask-image: radial-gradient(ellipse 74% 50% at 50% 76%, #000 18%, transparent 74%);
 }
 
 .hero-art.is-ready:not(.is-fallback) ~ .hero-art-fallback {
@@ -755,9 +746,9 @@ p {
   inset: 0;
   z-index: 2;
   background:
-    /* Reading plate — opaque through title, lede, and CTAs */
-    radial-gradient(ellipse 72% 64% at 50% 42%, #f9f8f6 0%, #f9f8f6 36%, rgba(249, 248, 246, 0.92) 52%, rgba(249, 248, 246, 0.4) 70%, transparent 82%),
-    linear-gradient(180deg, #f6f3ed 0%, rgba(246, 243, 237, 0.75) 32%, rgba(246, 243, 237, 0.35) 52%, transparent 68%, rgba(239, 235, 228, 0.55) 100%);
+    /* Soft reading haze — glass stays visible around/under type */
+    radial-gradient(ellipse 52% 40% at 50% 36%, rgba(249, 248, 246, 0.68), transparent 72%),
+    linear-gradient(180deg, rgba(246, 243, 237, 0.5) 0%, transparent 26%, transparent 72%, rgba(239, 235, 228, 0.42) 100%);
   pointer-events: none;
 }
 
@@ -765,7 +756,8 @@ p {
   position: absolute;
   inset: 0;
   z-index: 3;
-  opacity: 0.1;
+  opacity: 0.22;
+  mix-blend-mode: multiply;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
   background-size: 180px 180px;
   pointer-events: none;
@@ -775,20 +767,6 @@ p {
   position: relative;
   z-index: 10;
   isolation: isolate;
-}
-
-/* Extra cream plate behind copy so watery glass can't wash the words */
-.hero .container::before {
-  content: "";
-  position: absolute;
-  left: 50%;
-  top: 42%;
-  width: min(920px, 100%);
-  height: min(520px, 78%);
-  translate: -50% -48%;
-  z-index: -1;
-  pointer-events: none;
-  background: radial-gradient(ellipse 58% 52% at 50% 48%, rgba(249, 248, 246, 0.97) 0%, rgba(249, 248, 246, 0.82) 48%, transparent 74%);
 }
 
 .hero .eyebrow {
@@ -1146,31 +1124,28 @@ a.work-card-media {
   }
 
   .hero-art {
-    width: min(140vw, 900px);
-    height: min(74vw, 500px);
-    top: 82%;
-    translate: -50% -24%;
-  }
-
-  .hero-art.is-ready {
-    opacity: 0.55;
+    width: min(140vw, 920px);
+    height: min(88vw, 580px);
+    top: 46%;
+    translate: -50% -40%;
+    opacity: 0.95;
   }
 
   .hero-orb--a,
   .hero-orb--b,
   .hero-orb--c {
-    opacity: 0.32;
+    opacity: 0.4;
     filter: blur(36px);
   }
 
   .hero-geo {
-    opacity: 0.1;
+    opacity: 0.14;
   }
 
   .hero-veil {
     background:
-      radial-gradient(ellipse 82% 62% at 50% 40%, #f9f8f6 0%, #f9f8f6 40%, rgba(249, 248, 246, 0.9) 58%, transparent 78%),
-      linear-gradient(180deg, #f6f3ed 0%, rgba(246, 243, 237, 0.7) 34%, transparent 58%, transparent 74%, rgba(239, 235, 228, 0.5) 100%);
+      radial-gradient(ellipse 68% 46% at 50% 34%, rgba(249, 248, 246, 0.76), transparent 72%),
+      linear-gradient(180deg, rgba(246, 243, 237, 0.48) 0%, transparent 30%, transparent 70%, rgba(239, 235, 228, 0.4) 100%);
   }
 
   .hero-title {
@@ -2689,9 +2664,8 @@ body.is-leaving {
   }
 
   .hero-art {
-    width: min(2100px, 130%);
-    height: min(820px, 70vw);
-    top: 76%;
+    width: min(2200px, 140%);
+    height: min(940px, 78vw);
   }
 }
 

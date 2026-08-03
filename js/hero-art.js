@@ -117,10 +117,9 @@
       /* Soft edge fade — keep type readable near center-top */
       float edge = smoothstep(0.0, 0.05, tuv.x) * smoothstep(1.0, 0.95, tuv.x)
                  * smoothstep(0.0, 0.08, tuv.y) * smoothstep(1.0, 0.88, tuv.y);
-      /* Strong plate under headline so glass never takes over the words */
-      float centerSoft = 1.0 - smoothstep(0.08, 0.5, distance(uv, vec2(0.5, 0.28))) * 0.85;
-      float topFade = smoothstep(0.0, 0.42, uv.y);
-      col.a *= edge * centerSoft * topFade * (0.7 + influence * 0.1);
+      /* Light dip under headline so glass stays visible around the words */
+      float centerSoft = 1.0 - smoothstep(0.22, 0.62, distance(uv, vec2(0.5, 0.28))) * 0.28;
+      col.a *= edge * centerSoft * (0.94 + influence * 0.06);
 
       /* Outside texture bounds */
       if (tuv.x < 0.0 || tuv.x > 1.0 || tuv.y < 0.0 || tuv.y > 1.0) {
@@ -241,8 +240,8 @@
     gl.uniform1f(uTime, t);
     gl.uniform1f(uLiquid, liquid);
     gl.uniform1f(uCover, texAspect);
-    gl.uniform1f(uZoom, isNarrow() ? 1.12 : 1.28);
-    gl.uniform1f(uYBias, isNarrow() ? 0.1 : 0.18);
+    gl.uniform1f(uZoom, isNarrow() ? 1.22 : 1.55);
+    gl.uniform1f(uYBias, isNarrow() ? 0.04 : 0.1);
     gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
 
     const moving =
